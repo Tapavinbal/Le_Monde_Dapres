@@ -8,6 +8,7 @@
 class Serveur : public Personnel{
 	public:
 		static size_t i;
+		Serveur();
 		Serveur(std::string n, std::string p, int h);
 		std::string getNom() const {return nom;}
 		std::string getPrenom() const {return prenom;}

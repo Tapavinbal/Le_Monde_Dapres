@@ -6,6 +6,7 @@
 class Table{
 	public:
 		Serveur serveur;
+		Table();
 		Table(int c);
 		void changerEtat();
 		void attribuerServeur(Serveur s);
