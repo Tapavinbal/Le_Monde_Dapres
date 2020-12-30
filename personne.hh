@@ -4,7 +4,9 @@
 //Classe abstraite
 class Personne{
 	public:
-		virtual std::string nom;
-		virtual std::string prenom;
-	private:
+		std::string getNom() = 0;
+		std::string getPrenom() = 0;
+	protected:
+		std::string nom;
+		std::string prenom;
 }

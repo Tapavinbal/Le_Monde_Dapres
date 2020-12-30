@@ -9,6 +9,7 @@ class Client : public Personne{
 		Client(string n, string p);
 		std::string getNom() const {return nom;}
 		std::string getPrenom() const {return prenom;}
+		std::size_t getId() const {return id_client;}
 	private:
-		size_t id;
+		size_t id_client;
 }
