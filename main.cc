@@ -1,7 +1,5 @@
-#pragma once
 #include<iostream>
 #include <string>
-#include "table.hh"
 
 int main(){
 	Table t1;

@@ -5,14 +5,14 @@
 
 class Table{
 	public:
-		Serveur serveur;
+		static std::size_t i;
 		Table();
 		Table(int c);
 		void changerEtat();
-		void attribuerServeur(Serveur s);
+		void attribuerServeur(Serveur &s);
 	private:
-		static int i;
-		int numero;
+		std::size_t id_table;
 		bool etat; //0 pour libre et 1 pour occupe
-		int capacite;
+		std::size_t capacite;
+		Serveur serveur;
 };

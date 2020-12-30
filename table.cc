@@ -2,16 +2,18 @@
 #include <string>
 #include "table.hh"
 
+size_t Table::i = 0;
+
 Table::Table(int c){
-  numero=i;
-  etat=0;
-  capacite=c;
+  	id_table = i++;
+  	etat = 0;
+  	capacite = c;
 }
 
 void Table::changerEtat(){
-  etat=!etat;
+  	etat =! etat;
 }
 
-void Table::attribuerServeur(Serveur s){
-  serveur=s;
+void Table::attribuerServeur(Serveur &s){
+	
 }
