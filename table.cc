@@ -8,10 +8,10 @@ Table::Table(int c){
   capacite=c;
 }
 
-Table::changerEtat(){
+void Table::changerEtat(){
   etat=!etat;
 }
 
-Table::attribuerServeur(Serveur s){
+void Table::attribuerServeur(Serveur s){
   serveur=s;
 }
