@@ -4,6 +4,6 @@
 
 class Cuisinier : public Personnel{
 	public:
-		
+		virtual static size_t i;
 	private:
 }

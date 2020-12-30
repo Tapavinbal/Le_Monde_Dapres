@@ -5,6 +5,6 @@
 //Classe abstraite
 class Personnel : public Personne{
 	public:
-		//virtual std::int regime; //35h, 39h, mi-temps ? 
+		virtual std::int regime; //35h, 39h, mi-temps ? 
 	private:
 }
