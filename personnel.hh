@@ -6,6 +6,7 @@
 //Classe abstraite
 class Personnel : public Personne{
 	public:
+		Personnel(std::string n, std::string p):Personne(n,p){}
 		virtual std::string getNom()=0;
 		virtual std::string getPrenom()=0;
 		virtual int getRegime()=0;
