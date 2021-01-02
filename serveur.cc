@@ -9,3 +9,7 @@ Serveur::Serveur(string n, string p, int h){
 	regime = h;
 	id_serveur = i++;
 }
+
+void Serveur::ajouterTable(Table t){
+	tables.push_back(t);
+}

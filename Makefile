@@ -11,11 +11,11 @@ EXEC= main
 
 all: $(EXEC)
 
-testcase : 
+testcase :
 	cd $(TST_DIR) ;  make
 
 $(EXEC): $(OBJ)
-	$(CC) $(LIBFLAGS) $^ -o $@  
+	$(CC) $(LIBFLAGS) $^ -o $@
 
 %.o: %.cc
 	$(CC) $(CCFLAGS) -o $@ -c $<
@@ -29,4 +29,3 @@ clean:
 cleantest:
 	cd $(TST_DIR) ; make clean
 distclean : clean cleantest
-

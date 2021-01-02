@@ -1,3 +1,5 @@
+#include<iostream>
+#include <string>
 #include "cuisinier.hh"
 using namespace std;
 
