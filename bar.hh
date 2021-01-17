@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include "table.hh"
@@ -5,6 +6,7 @@
 #include "cuisinier.hh"
 #include "client.hh"
 
+class Client;
 class Bar{
 	public:
 		//vecteurs à mettre en private mais j'ai eu la flemme

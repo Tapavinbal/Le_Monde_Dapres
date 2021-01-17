@@ -1,5 +1,5 @@
-#include "bar.hh"
 
+#include "bar.hh"
 
 void Bar::afficherCuisiniers(){
 	for(size_t i=0;i<cuisiniers.size();i++){
@@ -38,7 +38,6 @@ void Bar::afficherClients(){
 	}
 	std::cout<<std::endl;
 }
-
 
 
 void Bar::associerServeurTable(Serveur s,Table t){

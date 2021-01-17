@@ -1,5 +1,5 @@
 CC=g++
-CCFLAGS= -Wall -Werror -std=c++11 -g
+CCFLAGS= -Wall -Werror -std=c++11 -g -lSDL2main -lSDL2  -lSDL2_image -lSDL2_ttf -lSDL2_mixer
 LIBFLAGS=
 SRC= $(wildcard *.cc)
 OBJ= $(SRC:.cc=.o)

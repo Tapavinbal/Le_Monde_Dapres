@@ -8,12 +8,17 @@
 #include "stock.hh"
 #include "bar.hh"
 
+
 int main(){
 	/////////////////////////créer bar////////////////////
 	Bar bar;
+
+
+
 	//////////////      initialisation      ////////////////////////////
-	std::string a;
-	std::string b;
+	//std::string a;
+//	std::string b;
+//	int c;
 	////////////Initialisation classique////////////////
 	Stock stock;
 	stock.setCarte("bière");
@@ -31,18 +36,18 @@ int main(){
 	Table t1(2);
 	Table t2(2);
 	Table t3(5);
-	Client cl0("Nezet", "Daran",2);
-	Client cl1("Nezet", "Dorian",5);
+	Client cl0("Nezet", "Daran",2,bar);
+	Client cl1("Nezet", "Dorian",5,bar);
 	Client cl2;
-
-	cl1.setNomEtPrenom("Michel","Brasil");
-
-	std::cout<<"Entrer nom et prénom client : ";
-	std::cin>>a>>b;
-	std::cout<<std::endl;
-
-	cl0.setNomEtPrenom(a,b);
-
+	//
+	// cl1.setNomEtPrenomEtNbre("Michel","Brasil",10);
+	//
+	// std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";
+	// std::cin>>a>>b>>c;
+	// std::cout<<std::endl;
+	//
+	// cl0.setNomEtPrenomEtNbre(a,b,c,bar);
+	//
 	bar.cuisiniers.push_back(c0);
 	bar.cuisiniers.push_back(c1);
 	bar.serveurs.push_back(s0);
@@ -53,18 +58,18 @@ int main(){
 	bar.tables.push_back(t3);
 	bar.clients.push_back(cl0);
 	bar.clients.push_back(cl1);
-	bar.clients.push_back(cl2);
-
+	// bar.clients.push_back(cl2);
+	//
 	bar.associerServeurTable(s0,t0);
 	bar.associerServeurTable(s0,t3);
 	bar.associerServeurTable(s1,t1);
 	bar.associerServeurTable(s1,t2);
-
-	////////Initialistion par tableau (plus facile pour la suite)/////////////////
-	////Pas si facile que ça a faire, a mettre en place quand on pourra changer les infos de tout le monde
-
-
-	///////////////////// premier affichage bar ///////////////////////////////////
+	//
+	// ////////Initialistion par tableau (plus facile pour la suite)/////////////////
+	// ////Pas si facile que ça a faire, a mettre en place quand on pourra changer les infos de tout le monde
+	//
+	//
+	// ///////////////////// premier affichage bar ///////////////////////////////////
 	stock.afficherCarte();
 	bar.afficherCuisiniers();
 	bar.afficherServeurs();
