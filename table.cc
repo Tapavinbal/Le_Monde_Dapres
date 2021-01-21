@@ -2,7 +2,7 @@
 #include <string>
 #include "table.hh"
 
-size_t Table::i = 0;
+size_t Table::i = 1;
 
 Table::Table(int c){
   	id_table = i++;

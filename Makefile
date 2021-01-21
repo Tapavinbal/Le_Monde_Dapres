@@ -1,6 +1,6 @@
 CC=g++
-CCFLAGS= -Wall -Werror -std=c++11 -g -lSDL2main -lSDL2  -lSDL2_image -lSDL2_ttf -lSDL2_mixer
-LIBFLAGS=
+CCFLAGS= -Wall -Werror -std=c++11 -g
+LIBFLAGS=-lsfml-graphics -lsfml-window -lsfml-system
 SRC= $(wildcard *.cc)
 OBJ= $(SRC:.cc=.o)
 TST_DIR=tests/

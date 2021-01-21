@@ -7,6 +7,7 @@
 #include "client.hh"
 #include "stock.hh"
 #include "bar.hh"
+#include <SFML/Graphics.hpp>
 
 
 int main(){
@@ -16,9 +17,15 @@ int main(){
 
 
 	//////////////      initialisation      ////////////////////////////
+<<<<<<< HEAD
+	std::string a;
+	std::string b;
+	int c;
+=======
 	//std::string a;
 //	std::string b;
 //	int c;
+>>>>>>> 4e5831d0442b97eea121d1449d7a7353187562c0
 	////////////Initialisation classique////////////////
 	Stock stock;
 	stock.setCarte("bière");
@@ -32,8 +39,14 @@ int main(){
 	Cuisinier c1("Daussette","Lory",39);
 	Serveur s0("Dupont","Lisa",35);
 	Serveur s1("Martin","Pierre",24);
-	Table t0(10);
 	Table t1(2);
+<<<<<<< HEAD
+	Table t2(4);
+	Table t3(2);
+	Table t4(5);
+	Table t5(10);
+	Table t6(4);
+=======
 	Table t2(2);
 	Table t3(5);
 	Client cl0("Nezet", "Daran",2,bar);
@@ -48,23 +61,46 @@ int main(){
 	//
 	// cl0.setNomEtPrenomEtNbre(a,b,c,bar);
 	//
+>>>>>>> 4e5831d0442b97eea121d1449d7a7353187562c0
 	bar.cuisiniers.push_back(c0);
 	bar.cuisiniers.push_back(c1);
 	bar.serveurs.push_back(s0);
 	bar.serveurs.push_back(s1);
-	bar.tables.push_back(t0);
+
 	bar.tables.push_back(t1);
 	bar.tables.push_back(t2);
 	bar.tables.push_back(t3);
+
+
+	Client cl0("Nezet", "Daran",2,bar);
+	Client cl1("Nezet", "Dorian",5,bar);
+	Client cl2;
+	//
+	//cl1.setNomEtPrenomEtNbre("Michel","Brasil",10);
+	//
+	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";
+	std::cin>>a>>b>>c;
+	std::cout<<std::endl;
+	cl2.setNomEtPrenomEtNbre(a,b,c,bar);
+	bar.associerTableClient(&cl2);
+
 	bar.clients.push_back(cl0);
 	bar.clients.push_back(cl1);
 	// bar.clients.push_back(cl2);
 	//
+<<<<<<< HEAD
+	bar.associerServeurTable(s0,t4);
+	bar.associerServeurTable(s0,t3);
+	bar.associerServeurTable(s1,t1);
+	bar.associerServeurTable(s1,t2);
+
+=======
 	bar.associerServeurTable(s0,t0);
 	bar.associerServeurTable(s0,t3);
 	bar.associerServeurTable(s1,t1);
 	bar.associerServeurTable(s1,t2);
 	//
+>>>>>>> 4e5831d0442b97eea121d1449d7a7353187562c0
 	// ////////Initialistion par tableau (plus facile pour la suite)/////////////////
 	// ////Pas si facile que ça a faire, a mettre en place quand on pourra changer les infos de tout le monde
 	//
@@ -85,6 +121,26 @@ int main(){
 	stock.afficherCarte();
 	stock.passerCommande("bière",5);
 	stock.afficherCarte();
+
+	/////partie graphique///////
+// sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+// sf::CircleShape shape(100.f);
+// shape.setFillCiolor(sf::Color::Green);
+//
+// while (window.isOpen())
+// {
+// 		sf::Event event;
+// 		while (window.pollEvent(event))
+// 		{
+// 				if (event.type == sf::Event::Closed)
+// 						window.close();
+// 		}
+//
+// 		window.clear();
+// 		window.draw(shape);
+// 		window.display();
+// }
+
 
 
 	return 0;

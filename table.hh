@@ -11,10 +11,10 @@ class Table{
 		Table(int c);
 		void changerEtat();
 		void attribuerServeur(Serveur &s);
-		int getCapacite();
-		int getId();
+		int getCapacite(return capacite;);
+		int getId(return id_table);
 		Serveur getServeur();
-		bool getEtat();
+		bool getEtat(return etat;);
 	private:
 		std::size_t id_table;
 		bool etat; //0 pour libre et 1 pour occupe

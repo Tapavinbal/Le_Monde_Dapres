@@ -44,3 +44,23 @@ void Bar::associerServeurTable(Serveur s,Table t){
 	s.ajouterTable(t);
 	t.attribuerServeur(s);
 }
+
+void Bar::associerTableClient(Client *c){
+	bool table=0;
+	unsigned long int i=0;
+	//associer une table à ce groupe
+	 while((table==0) && (i<(tables.size()))){
+	    if((tables[i].getCapacite()==c->getNbre()) && (tables[i].getEtat==0)){ ///////////////////////marche pas encore
+	    	c->t=&(tables[i]);
+				table[i].setEtat=1;
+	     	table=1;
+	   }else{
+	     i++;
+	   }
+	 }
+	 if(table==0){
+	   std::cout<<"aucune table libre pour le moment"<<std::endl;
+	 }else{
+	   std::cout<<"Vous pouvez prendre la table : "<<tables[i].getId()<<std::endl;
+	}
+}
