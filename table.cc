@@ -18,22 +18,10 @@ void Table::changerEtat(){
     }
 }
 
+void Table::setEtat(int e){
+  etat=e;
+}
+
 void Table::attribuerServeur(Serveur &s){
 
-}
-
-int Table::getCapacite(){
-  return capacite;
-}
-
-int Table::getId(){
-  return id_table;
-}
-
-Serveur Table::getServeur(){
-  return *serveur;
-}
-
-bool Table::getEtat(){
-  return etat;
 }

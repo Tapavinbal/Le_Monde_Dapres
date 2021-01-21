@@ -48,12 +48,18 @@ void Bar::associerServeurTable(Serveur s,Table t){
 void Bar::associerTableClient(Client *c){
 	bool table=0;
 	unsigned long int i=0;
+	int temp=50;
 	//associer une table à ce groupe
 	 while((table==0) && (i<(tables.size()))){
-	    if((tables[i].getCapacite()==c->getNbre()) && (tables[i].getEtat==0)){ ///////////////////////marche pas encore
+	    if((tables[i].getEtat()==0)){
+				if(tables[i].getCapacite()>=c->getNbre()){
+					if(((tables[i].getCapacite())-(c->getNbre()))<temp){
 	    	c->t=&(tables[i]);
-				table[i].setEtat=1;
+				tables[i].setEtat(1);
 	     	table=1;
+				temp=(tables[i].getCapacite())-(c->getNbre());
+			}
+		}
 	   }else{
 	     i++;
 	   }

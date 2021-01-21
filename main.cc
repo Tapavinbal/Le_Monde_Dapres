@@ -16,16 +16,15 @@ int main(){
 
 
 
-	//////////////      initialisation      ////////////////////////////
-<<<<<<< HEAD
+
 	std::string a;
 	std::string b;
 	int c;
-=======
+
 	//std::string a;
 //	std::string b;
 //	int c;
->>>>>>> 4e5831d0442b97eea121d1449d7a7353187562c0
+
 	////////////Initialisation classique////////////////
 	Stock stock;
 	stock.setCarte("bière");
@@ -40,18 +39,16 @@ int main(){
 	Serveur s0("Dupont","Lisa",35);
 	Serveur s1("Martin","Pierre",24);
 	Table t1(2);
-<<<<<<< HEAD
+	Table t0(6);
 	Table t2(4);
 	Table t3(2);
 	Table t4(5);
 	Table t5(10);
 	Table t6(4);
-=======
-	Table t2(2);
-	Table t3(5);
-	Client cl0("Nezet", "Daran",2,bar);
-	Client cl1("Nezet", "Dorian",5,bar);
-	Client cl2;
+
+	//Client cl0("Nezet", "Daran",2,bar);
+	//Client cl1("Nezet", "Dorian",5,bar);
+//	Client cl2;
 	//
 	// cl1.setNomEtPrenomEtNbre("Michel","Brasil",10);
 	//
@@ -61,7 +58,7 @@ int main(){
 	//
 	// cl0.setNomEtPrenomEtNbre(a,b,c,bar);
 	//
->>>>>>> 4e5831d0442b97eea121d1449d7a7353187562c0
+
 	bar.cuisiniers.push_back(c0);
 	bar.cuisiniers.push_back(c1);
 	bar.serveurs.push_back(s0);
@@ -72,8 +69,8 @@ int main(){
 	bar.tables.push_back(t3);
 
 
-	Client cl0("Nezet", "Daran",2,bar);
-	Client cl1("Nezet", "Dorian",5,bar);
+	//Client cl0("Nezet", "Daran",2,bar);
+	//Client cl1("Nezet", "Dorian",5,bar);
 	Client cl2;
 	//
 	//cl1.setNomEtPrenomEtNbre("Michel","Brasil",10);
@@ -84,23 +81,17 @@ int main(){
 	cl2.setNomEtPrenomEtNbre(a,b,c,bar);
 	bar.associerTableClient(&cl2);
 
-	bar.clients.push_back(cl0);
-	bar.clients.push_back(cl1);
-	// bar.clients.push_back(cl2);
+	//bar.clients.push_back(cl0);
+//	bar.clients.push_back(cl1);
+	 bar.clients.push_back(cl2);
 	//
-<<<<<<< HEAD
-	bar.associerServeurTable(s0,t4);
-	bar.associerServeurTable(s0,t3);
-	bar.associerServeurTable(s1,t1);
-	bar.associerServeurTable(s1,t2);
 
-=======
+
 	bar.associerServeurTable(s0,t0);
 	bar.associerServeurTable(s0,t3);
 	bar.associerServeurTable(s1,t1);
 	bar.associerServeurTable(s1,t2);
-	//
->>>>>>> 4e5831d0442b97eea121d1449d7a7353187562c0
+
 	// ////////Initialistion par tableau (plus facile pour la suite)/////////////////
 	// ////Pas si facile que ça a faire, a mettre en place quand on pourra changer les infos de tout le monde
 	//
@@ -112,7 +103,7 @@ int main(){
 	bar.afficherTables();
 	bar.afficherClients();
 
-	bar.tables[1].changerEtat(); //attention pour faire des modifications il faut modifier directement dans le vecteur de tables
+	//bar.tables[1].changerEtat(); //attention pour faire des modifications il faut modifier directement dans le vecteur de tables
 
 	bar.afficherTables();
 	stock.passerCommande("bière",1);

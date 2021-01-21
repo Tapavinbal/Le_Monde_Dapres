@@ -31,7 +31,7 @@ void Client::choisirTable(Bar *b){
 
 //quand on créé un client on l'associe directement à une table libre si possible il faut donc un tableau des tables libres
 Client::Client(std::string n, std::string p, size_t tailleGroupe, Bar b):Personne(n,p){
-<<<<<<< HEAD
+
 
   id_client=i++; //associer id a client puis augmenter l'id pour le prochain
   nbrePersonnesGp=tailleGroupe;
@@ -45,12 +45,11 @@ void Client::setNomEtPrenomEtNbre(std::string n,std::string p,int nbre, Bar b){
   	prenom=p;
     nbrePersonnesGp=nbre;
     choisirTable(&b);
-=======
   //bool table=0;
   //int i=0;
 
   id_client=i++;
-  nbrePersonnesGp=tailleGroupe;
+  //nbrePersonnesGp=tailleGroupe;
   //*bar=b;
 
   //associer une table à ce groupe
@@ -65,9 +64,8 @@ void Client::setNomEtPrenomEtNbre(std::string n,std::string p,int nbre, Bar b){
   // std::cout<<bar->tables[i].getId();
 }
 
-void Client::setNomEtPrenomEtNbre(std::string n,std::string p,int nbre){
-  	nom=n;
-  	prenom=p;
-    nbrePersonnesGp=nbre;
->>>>>>> 4e5831d0442b97eea121d1449d7a7353187562c0
-}
+// void Client::setNomEtPrenomEtNbre(std::string n,std::string p,int nbre){
+//   	nom=n;
+//   	prenom=p;
+//     nbrePersonnesGp=nbre;
+// }
