@@ -8,7 +8,7 @@
 class Bar;
 class Client : public Personne{
 	public:
-				Table* t;
+		Table* t;
 		static size_t i;
 		Client();
 		Client(std::string n, std::string p, size_t tailleGroupe, Bar b);
@@ -21,6 +21,6 @@ class Client : public Personne{
 	private:
 		size_t id_client;
 		int nbrePersonnesGp;
-
+		//std::vector
 		Bar* bar;
 };
