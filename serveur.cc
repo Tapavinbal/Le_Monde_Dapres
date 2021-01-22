@@ -11,3 +11,7 @@ Serveur::Serveur(string n, string p, int h):Personnel(n,p){
 void Serveur::ajouterTable(Table t){
 	tables.push_back(t);
 }
+
+void Serveur::augmenterNbTables(){
+	nbre_tables++;
+}

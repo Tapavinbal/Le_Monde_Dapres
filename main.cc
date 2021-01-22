@@ -33,7 +33,9 @@ int main(){
 	Cuisinier c0("Potter","Harry",30);
 	Cuisinier c1("Daussette","Lory",39);
 	Serveur s0("Dupont","Lisa",35);
-	Serveur s1("Martin","Pierre",24);
+	Serveur s1("Martine","Jules",24);
+	Serveur s2("Muni","Lili",35);
+	Serveur s3("Samoussa","Pierre",24);
 	Table t1(4);
 	Table t0(6);
 	Table t2(8);
@@ -62,6 +64,8 @@ int main(){
 	bar.cuisiniers.push_back(c1);
 	bar.serveurs.push_back(s0);
 	bar.serveurs.push_back(s1);
+	bar.serveurs.push_back(s2);
+//	bar.serveurs.push_back(s3);
 
 	bar.tables.push_back(t1);
 	bar.tables.push_back(t2);
@@ -91,7 +95,8 @@ bar.afficherTables();
 	std::cout<<std::endl;
 	cl2.setNomEtPrenomEtNbre(a,b,c,bar);
 	bar.associerTableClient(&cl2);
-	bar.associerServeurTable(s0,(cl2.t));
+	bar.associerServeurTable((cl2.t));
+	bar.associerCuisinierTable((cl2.t));
 	bar.afficherTables();
 
 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe (10 max): ";
@@ -99,7 +104,8 @@ bar.afficherTables();
 	std::cout<<std::endl;
 	cl1.setNomEtPrenomEtNbre(a,b,c,bar);
 	bar.associerTableClient(&cl1);
-	bar.associerServeurTable(s0,(cl1.t));
+	bar.associerServeurTable((cl1.t));
+	bar.associerCuisinierTable((cl1.t));
 	bar.afficherTables();
 
 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe (10 max) : ";
@@ -107,6 +113,8 @@ bar.afficherTables();
 	std::cout<<std::endl;
 	cl3.setNomEtPrenomEtNbre(a,b,c,bar);
 	bar.associerTableClient(&cl3);
+	bar.associerServeurTable((cl3.t));
+		bar.associerCuisinierTable((cl3.t));
 	bar.afficherTables();
 
 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";
@@ -114,6 +122,8 @@ bar.afficherTables();
 	std::cout<<std::endl;
 	cl4.setNomEtPrenomEtNbre(a,b,c,bar);
 	bar.associerTableClient(&cl4);
+	bar.associerServeurTable((cl4.t));
+		bar.associerCuisinierTable((cl4.t));
 	bar.afficherTables();
 
 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";

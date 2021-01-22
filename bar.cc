@@ -40,21 +40,41 @@ void Bar::afficherClients(){
 }
 
 
-void Bar::associerServeurTable(Serveur s,Table* t){
+void Bar::associerServeurTable(Table* t){
 	unsigned long int i=0;
 	int temp=50;
-	while( (i<(serveurs.size()))-1){
-	if(serveurs[i].getNbTables()<temp){
-		std::cout<<"eeeeeeeeeeeee"<<std::endl;
-		t->serveur=&(serveurs[i]);
-		serveurs[i].tables.push_back(*t);
-		temp=serveurs[i].getNbTables();
-	}
-	std::cout<<"fffffffffffffffffffff"<<std::endl;
-	i++;
-	std::cout<<i<<std::endl;
+	int i_serveur=0;
+	while( (i<=(serveurs.size())-1)){
+		if((serveurs[i].getNbTables())<temp){
+			temp=serveurs[i].getNbTables();
+			i_serveur=i;
+		}
+		i++;
 }
-std::cout<<serveurs[i].getPrenom()<<" est le serveur de la table "<<t->getId()<<std::endl;
+t->serveur=&(serveurs[i_serveur]);
+serveurs[i_serveur].tables.push_back(*t);
+serveurs[i_serveur].augmenterNbTables();
+//std::cout<<serveurs[i].getNbTables()<<std::endl;
+std::cout<<serveurs[i_serveur].getPrenom()<<" est le serveur de la table "<<t->getId()<<std::endl;
+std::cout<<std::endl;
+}
+
+void Bar::associerCuisinierTable(Table* t){
+	unsigned long int i=0;
+	int temp=50;
+	int i_cuisinier=0;
+	while( (i<=(cuisiniers.size())-1)){
+		if((cuisiniers[i].getNbTables())<temp){
+			temp=cuisiniers[i].getNbTables();
+			i_cuisinier=i;
+		}
+		i++;
+}
+t->cuisinier=&(cuisiniers[i_cuisinier]);
+cuisiniers[i_cuisinier].tables.push_back(*t);
+cuisiniers[i_cuisinier].augmenterNbTables();
+//std::cout<<serveurs[i].getNbTables()<<std::endl;
+std::cout<<cuisiniers[i_cuisinier].getPrenom()<<" est le cuisinier de la table "<<t->getId()<<std::endl;
 std::cout<<std::endl;
 }
 

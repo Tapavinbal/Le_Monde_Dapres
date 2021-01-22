@@ -2,11 +2,14 @@
 #include<iostream>
 #include <string>
 #include "serveur.hh"
+#include "cuisinier.hh"
 
 class Serveur;
+class Cuisinier;
 class Table{
 	public:
 		Serveur* serveur;
+		Cuisinier* cuisinier;
 		static std::size_t i;
 		Table();
 		Table(int c);

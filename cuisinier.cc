@@ -9,3 +9,10 @@ Cuisinier::Cuisinier(string n, string p, int h):Personnel(n,p){
 	regime = h;
 	id_cuisinier = i++;
 }
+void Cuisinier::ajouterTable(Table t){
+	tables.push_back(t);
+}
+
+void Cuisinier::augmenterNbTables(){
+	nbre_tables++;
+}
