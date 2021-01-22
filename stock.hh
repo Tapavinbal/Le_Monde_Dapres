@@ -7,6 +7,7 @@ class Stock{
 	public:
 		Stock();
 		void setCarte(std::string s);
+		void setCarte(std::string s, int quantite);
 		void afficherCarte();
 		bool passerCommande(std::string commande,int nombre);
 	private:

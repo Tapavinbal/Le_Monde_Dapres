@@ -10,6 +10,10 @@ void Stock::setCarte(std::string s){
   carte[s]+=1;
 }
 
+void Stock::setCarte(std::string s, int quantite){
+  carte[s]+=quantite;
+}
+
 void Stock::afficherCarte(){
   std::cout<<"CARTE"<<std::endl;
   for(auto i:carte){

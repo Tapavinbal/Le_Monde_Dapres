@@ -20,7 +20,16 @@ int main(){
 
 	////////////Initialisation classique////////////////
 	Stock stock;
-	stock.setCarte("bière");
+	stock.setCarte("bière",50);
+	stock.setCarte("eau_gazeuse",60);
+	stock.setCarte("eau",500);
+	stock.setCarte("pina_colada",30);
+	stock.setCarte("coca",60);
+	stock.setCarte("mojito",30);
+	stock.setCarte("spritz",30);
+	stock.setCarte("tequilla_sunrise",30);
+	stock.setCarte("ricard",10);
+	/*stock.setCarte("bière",);
 	stock.setCarte("bière");
 	stock.setCarte("eau_gazeuse");
 	stock.setCarte("pina_colada");
@@ -76,7 +85,7 @@ int main(){
 	stock.setCarte("eau_gazeuse");
 	stock.setCarte("pina_colada");
 	stock.setCarte("ricard");
-	stock.setCarte("mojito");
+	stock.setCarte("mojito");*/
 
 
 
@@ -179,7 +188,7 @@ bar.afficherTables();
 	bar.afficherTables();
 
 	//bar.clients.push_back(cl0);
-  bar.clients.push_back(cl1);
+  	bar.clients.push_back(cl1);
 	bar.clients.push_back(cl2);
 	bar.clients.push_back(cl3);
 	bar.clients.push_back(cl3);
