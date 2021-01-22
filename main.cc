@@ -18,67 +18,63 @@ int main(){
 	std::string b;
 	int c;
 
-	//std::string a;
-//	std::string b;
-//	int c;
-
 	////////////Initialisation classique////////////////
 	Stock stock;
 	stock.setCarte("bière");
 	stock.setCarte("bière");
-	stock.setCarte("eau gazeuse");
-	stock.setCarte("pina colada");
+	stock.setCarte("eau_gazeuse");
+	stock.setCarte("pina_colada");
 	stock.setCarte("coca");
 	stock.setCarte("mojito");
 	stock.setCarte("bière");
 	stock.setCarte("bière");
 	stock.setCarte("mojito");
-	stock.setCarte("pina colada");
-	stock.setCarte("coca");
-	stock.setCarte("spritz");
-	stock.setCarte("bière");
-	stock.setCarte("bière");
-	stock.setCarte("mojito");
-	stock.setCarte("pina colada");
-	stock.setCarte("eau");
-	stock.setCarte("mojito");
-	stock.setCarte("tequilla sunrise");
-	stock.setCarte("mojito");
-	stock.setCarte("pina colada");
-	stock.setCarte("ricard");
-	stock.setCarte("mojito");
-	stock.setCarte("bière");
-	stock.setCarte("mojito");
-	stock.setCarte("pina colada");
-	stock.setCarte("ricard");
-	stock.setCarte("mojito");
-	stock.setCarte("tequilla sunrise");
-	stock.setCarte("eau gazeuse");
-	stock.setCarte("pina colada");
-	stock.setCarte("ricard");
-	stock.setCarte("mojito");
-	stock.setCarte("pina colada");
+	stock.setCarte("pina_colada");
 	stock.setCarte("coca");
 	stock.setCarte("spritz");
 	stock.setCarte("bière");
 	stock.setCarte("bière");
 	stock.setCarte("mojito");
-	stock.setCarte("pina colada");
+	stock.setCarte("pina_colada");
 	stock.setCarte("eau");
 	stock.setCarte("mojito");
-	stock.setCarte("tequilla sunrise");
+	stock.setCarte("tequilla_sunrise");
 	stock.setCarte("mojito");
-	stock.setCarte("pina colada");
+	stock.setCarte("pina_colada");
 	stock.setCarte("ricard");
 	stock.setCarte("mojito");
 	stock.setCarte("bière");
 	stock.setCarte("mojito");
-	stock.setCarte("pina colada");
+	stock.setCarte("pina_colada");
 	stock.setCarte("ricard");
 	stock.setCarte("mojito");
-	stock.setCarte("tequilla sunrise");
-	stock.setCarte("eau gazeuse");
-	stock.setCarte("pina colada");
+	stock.setCarte("tequilla_sunrise");
+	stock.setCarte("eau_gazeuse");
+	stock.setCarte("pina_colada");
+	stock.setCarte("ricard");
+	stock.setCarte("mojito");
+	stock.setCarte("pina_colada");
+	stock.setCarte("coca");
+	stock.setCarte("spritz");
+	stock.setCarte("bière");
+	stock.setCarte("bière");
+	stock.setCarte("mojito");
+	stock.setCarte("pina_colada");
+	stock.setCarte("eau");
+	stock.setCarte("mojito");
+	stock.setCarte("tequilla_sunrise");
+	stock.setCarte("mojito");
+	stock.setCarte("pina_colada");
+	stock.setCarte("ricard");
+	stock.setCarte("mojito");
+	stock.setCarte("bière");
+	stock.setCarte("mojito");
+	stock.setCarte("pina_colada");
+	stock.setCarte("ricard");
+	stock.setCarte("mojito");
+	stock.setCarte("tequilla_sunrise");
+	stock.setCarte("eau_gazeuse");
+	stock.setCarte("pina_colada");
 	stock.setCarte("ricard");
 	stock.setCarte("mojito");
 
@@ -174,7 +170,6 @@ bar.afficherTables();
 	cl5.setNomEtPrenomEtNbre(a,b,c,bar);
 	bar.associerTableClient(&cl5);
 	bar.afficherTables();
-	bar.afficherTables();
 
 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";
 	std::cin>>a>>b>>c;
@@ -182,12 +177,11 @@ bar.afficherTables();
 	cl6.setNomEtPrenomEtNbre(a,b,c,bar);
 	bar.associerTableClient(&cl6);
 	bar.afficherTables();
-	bar.afficherTables();
 
 	//bar.clients.push_back(cl0);
-   bar.clients.push_back(cl1);
-	 bar.clients.push_back(cl2);
-	 bar.clients.push_back(cl3);
+  bar.clients.push_back(cl1);
+	bar.clients.push_back(cl2);
+	bar.clients.push_back(cl3);
 	bar.clients.push_back(cl3);
 	bar.clients.push_back(cl4);
 	bar.clients.push_back(cl5);
@@ -204,6 +198,28 @@ bar.afficherTables();
 	//
 	// ///////////////////// premier affichage bar ///////////////////////////////////
 	stock.afficherCarte();
+	std::cout<<"Entrer commande (une boisson et quantité): ";
+	std::cin>>a>>b;
+	std::cout<<std::endl;
+ 	int i = std::stoi(b);
+	stock.passerCommande(a,i);
+	stock.afficherCarte();
+
+	std::cout<<"Entrer commande (une boisson et quantité): ";
+	std::cin>>a>>b;
+	std::cout<<std::endl;
+	i = std::stoi(b);
+	stock.passerCommande(a,i);
+	stock.afficherCarte();
+
+	std::cout<<"Entrer commande (une boisson et quantité): ";
+	std::cin>>a>>b;
+	std::cout<<std::endl;
+	i = std::stoi(b);
+	stock.passerCommande(a,i);
+	stock.afficherCarte();
+
+
 	// bar.afficherCuisiniers();
 	// bar.afficherServeurs();
 	// bar.afficherTables();
@@ -211,13 +227,8 @@ bar.afficherTables();
 
 	//bar.tables[1].changerEtat(); //attention pour faire des modifications il faut modifier directement dans le vecteur de tables
 
-	//
-	// stock.passerCommande("bière",1);
-	// stock.afficherCarte();
-	// stock.passerCommande("coca",1);
-	// stock.afficherCarte();
-	// stock.passerCommande("bière",5);
-	// stock.afficherCarte();
+
+
 
 	/////partie graphique///////
 // sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
