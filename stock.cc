@@ -4,7 +4,6 @@
 #include <map>
 
 Stock::Stock(){
-
 }
 
 void Stock::setCarte(std::string s){

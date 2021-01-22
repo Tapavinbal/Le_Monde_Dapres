@@ -50,23 +50,26 @@ void Bar::associerTableClient(Client *c){
 	unsigned long int i=0;
 	int temp=50;
 	//associer une table à ce groupe
-	 while((table==0) && (i<(tables.size()))){
+	 while( (i<(tables.size()))){
 	    if((tables[i].getEtat()==0)){
 				if(tables[i].getCapacite()>=c->getNbre()){
 					if(((tables[i].getCapacite())-(c->getNbre()))<temp){
-	    	c->t=&(tables[i]);
-				tables[i].setEtat(1);
-	     	table=1;
-				temp=(tables[i].getCapacite())-(c->getNbre());
+	    			c->t=&(tables[i]);
+	     			table=1;
+						temp=(tables[i].getCapacite())-(c->getNbre());
 			}
 		}
+		i++;
 	   }else{
 	     i++;
 	   }
 	 }
+	 c->t->setEtat(1);
 	 if(table==0){
 	   std::cout<<"aucune table libre pour le moment"<<std::endl;
+		 std::cout<<std::endl;
 	 }else{
-	   std::cout<<"Vous pouvez prendre la table : "<<tables[i].getId()<<std::endl;
+	   std::cout<<"Vous pouvez prendre la table : "<<(c->t->getId())<<std::endl;
+		 std::cout<<std::endl;
 	}
 }
