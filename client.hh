@@ -15,8 +15,7 @@ class Client : public Personne{
 		std::string getNom() {return nom;}
 		std::string getPrenom() {return prenom;}
 		std::size_t getId() {return id_client;}
-		int getNbre(){return nbrePersonnesGp;}
-		void choisirTable(Bar *b);
+		int getNbre(){return nbrePersonnesGp;}	
 		void setNomEtPrenomEtNbre(std::string n,std::string p,int nbre,Bar b);
 	private:
 		size_t id_client;

@@ -90,41 +90,50 @@ bar.afficherTables();
 
 	//cl1.setNomEtPrenomEtNbre("Michel","Brasil",10);
 	//
+
 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe (10 max): ";
 	std::cin>>a>>b>>c;
 	std::cout<<std::endl;
 	cl2.setNomEtPrenomEtNbre(a,b,c,bar);
-	bar.associerTableClient(&cl2);
-	bar.associerServeurTable((cl2.t));
-	bar.associerCuisinierTable((cl2.t));
-	bar.afficherTables();
+	int res=bar.associerTableClient(&cl2);
+	if (res){ //si les clients ont une table
+		bar.associerServeurTable((cl2.t));
+		bar.associerCuisinierTable((cl2.t));
+		bar.afficherTables();
+	}
 
 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe (10 max): ";
 	std::cin>>a>>b>>c;
 	std::cout<<std::endl;
 	cl1.setNomEtPrenomEtNbre(a,b,c,bar);
-	bar.associerTableClient(&cl1);
+	res=bar.associerTableClient(&cl1);
+	if (res){ //si les clients ont une table
 	bar.associerServeurTable((cl1.t));
 	bar.associerCuisinierTable((cl1.t));
 	bar.afficherTables();
+}
 
 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe (10 max) : ";
 	std::cin>>a>>b>>c;
 	std::cout<<std::endl;
 	cl3.setNomEtPrenomEtNbre(a,b,c,bar);
-	bar.associerTableClient(&cl3);
+	res=bar.associerTableClient(&cl3);
+	if (res){ //si les clients ont une table
 	bar.associerServeurTable((cl3.t));
 		bar.associerCuisinierTable((cl3.t));
 	bar.afficherTables();
+}
 
 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";
 	std::cin>>a>>b>>c;
 	std::cout<<std::endl;
 	cl4.setNomEtPrenomEtNbre(a,b,c,bar);
-	bar.associerTableClient(&cl4);
+	res=bar.associerTableClient(&cl4);
+	if (res){ //si les clients ont une table
 	bar.associerServeurTable((cl4.t));
 		bar.associerCuisinierTable((cl4.t));
 	bar.afficherTables();
+}
 
 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";
 	std::cin>>a>>b>>c;

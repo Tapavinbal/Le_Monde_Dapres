@@ -19,7 +19,7 @@ class Bar{
 		void afficherTables();
 		void afficherClients();
 		void associerServeurTable(Table *t);
-		void associerTableClient(Client *c);
+		int associerTableClient(Client *c);
 		void associerCuisinierTable(Table* t);
 	private:
 };

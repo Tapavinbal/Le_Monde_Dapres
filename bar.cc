@@ -78,7 +78,7 @@ std::cout<<cuisiniers[i_cuisinier].getPrenom()<<" est le cuisinier de la table "
 std::cout<<std::endl;
 }
 
-void Bar::associerTableClient(Client *c){
+int Bar::associerTableClient(Client *c){
 	bool table=0;
 	unsigned long int i=0;
 	int temp=50;
@@ -101,8 +101,10 @@ void Bar::associerTableClient(Client *c){
 	 if(table==0){
 	   std::cout<<"aucune table libre pour le moment"<<std::endl;
 		 std::cout<<std::endl;
+		 return 0;
 	 }else{
 	   std::cout<<"Vous pouvez prendre la table : "<<(c->t->getId())<<std::endl;
 		 std::cout<<std::endl;
+		 return 1;
 	}
 }
