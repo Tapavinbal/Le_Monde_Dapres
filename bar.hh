@@ -18,7 +18,7 @@ class Bar{
 		void afficherServeurs();
 		void afficherTables();
 		void afficherClients();
-		void associerServeurTable(Serveur s,Table t);
+		void associerServeurTable(Serveur s,Table *t);
 		void associerTableClient(Client *c);
 	private:
 };

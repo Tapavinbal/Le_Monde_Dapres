@@ -29,65 +29,6 @@ int main(){
 	stock.setCarte("spritz",30);
 	stock.setCarte("tequilla_sunrise",30);
 	stock.setCarte("ricard",10);
-	/*stock.setCarte("bière",);
-	stock.setCarte("bière");
-	stock.setCarte("eau_gazeuse");
-	stock.setCarte("pina_colada");
-	stock.setCarte("coca");
-	stock.setCarte("mojito");
-	stock.setCarte("bière");
-	stock.setCarte("bière");
-	stock.setCarte("mojito");
-	stock.setCarte("pina_colada");
-	stock.setCarte("coca");
-	stock.setCarte("spritz");
-	stock.setCarte("bière");
-	stock.setCarte("bière");
-	stock.setCarte("mojito");
-	stock.setCarte("pina_colada");
-	stock.setCarte("eau");
-	stock.setCarte("mojito");
-	stock.setCarte("tequilla_sunrise");
-	stock.setCarte("mojito");
-	stock.setCarte("pina_colada");
-	stock.setCarte("ricard");
-	stock.setCarte("mojito");
-	stock.setCarte("bière");
-	stock.setCarte("mojito");
-	stock.setCarte("pina_colada");
-	stock.setCarte("ricard");
-	stock.setCarte("mojito");
-	stock.setCarte("tequilla_sunrise");
-	stock.setCarte("eau_gazeuse");
-	stock.setCarte("pina_colada");
-	stock.setCarte("ricard");
-	stock.setCarte("mojito");
-	stock.setCarte("pina_colada");
-	stock.setCarte("coca");
-	stock.setCarte("spritz");
-	stock.setCarte("bière");
-	stock.setCarte("bière");
-	stock.setCarte("mojito");
-	stock.setCarte("pina_colada");
-	stock.setCarte("eau");
-	stock.setCarte("mojito");
-	stock.setCarte("tequilla_sunrise");
-	stock.setCarte("mojito");
-	stock.setCarte("pina_colada");
-	stock.setCarte("ricard");
-	stock.setCarte("mojito");
-	stock.setCarte("bière");
-	stock.setCarte("mojito");
-	stock.setCarte("pina_colada");
-	stock.setCarte("ricard");
-	stock.setCarte("mojito");
-	stock.setCarte("tequilla_sunrise");
-	stock.setCarte("eau_gazeuse");
-	stock.setCarte("pina_colada");
-	stock.setCarte("ricard");
-	stock.setCarte("mojito");*/
-
-
 
 	Cuisinier c0("Potter","Harry",30);
 	Cuisinier c1("Daussette","Lory",39);
@@ -150,6 +91,7 @@ bar.afficherTables();
 	std::cout<<std::endl;
 	cl2.setNomEtPrenomEtNbre(a,b,c,bar);
 	bar.associerTableClient(&cl2);
+	bar.associerServeurTable(s0,(cl2.t));
 	bar.afficherTables();
 
 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe (10 max): ";
@@ -157,6 +99,7 @@ bar.afficherTables();
 	std::cout<<std::endl;
 	cl1.setNomEtPrenomEtNbre(a,b,c,bar);
 	bar.associerTableClient(&cl1);
+	bar.associerServeurTable(s0,(cl1.t));
 	bar.afficherTables();
 
 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe (10 max) : ";
@@ -196,10 +139,10 @@ bar.afficherTables();
 	bar.clients.push_back(cl5);
 
 
-	bar.associerServeurTable(s0,t0);
-	bar.associerServeurTable(s0,t3);
-	bar.associerServeurTable(s1,t1);
-	bar.associerServeurTable(s1,t2);
+
+	// bar.associerServeurTable(s0,t3);
+	// bar.associerServeurTable(s1,t1);
+	// bar.associerServeurTable(s1,t2);
 
 	// ////////Initialistion par tableau (plus facile pour la suite)/////////////////
 	// ////Pas si facile que ça a faire, a mettre en place quand on pourra changer les infos de tout le monde

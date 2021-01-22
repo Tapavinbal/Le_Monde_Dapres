@@ -40,9 +40,22 @@ void Bar::afficherClients(){
 }
 
 
-void Bar::associerServeurTable(Serveur s,Table t){
-	s.ajouterTable(t);
-	t.attribuerServeur(s);
+void Bar::associerServeurTable(Serveur s,Table* t){
+	unsigned long int i=0;
+	int temp=50;
+	while( (i<(serveurs.size()))-1){
+	if(serveurs[i].getNbTables()<temp){
+		std::cout<<"eeeeeeeeeeeee"<<std::endl;
+		t->serveur=&(serveurs[i]);
+		serveurs[i].tables.push_back(*t);
+		temp=serveurs[i].getNbTables();
+	}
+	std::cout<<"fffffffffffffffffffff"<<std::endl;
+	i++;
+	std::cout<<i<<std::endl;
+}
+std::cout<<serveurs[i].getPrenom()<<" est le serveur de la table "<<t->getId()<<std::endl;
+std::cout<<std::endl;
 }
 
 void Bar::associerTableClient(Client *c){

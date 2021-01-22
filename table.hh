@@ -6,6 +6,7 @@
 class Serveur;
 class Table{
 	public:
+		Serveur* serveur;
 		static std::size_t i;
 		Table();
 		Table(int c);
@@ -20,5 +21,5 @@ class Table{
 		std::size_t id_table;
 		bool etat; //0 pour libre et 1 pour occupe
 		std::size_t capacite;
-		Serveur* serveur;
+
 };
