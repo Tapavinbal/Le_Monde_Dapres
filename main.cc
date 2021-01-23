@@ -139,15 +139,24 @@ bar.afficherTables();
 	std::cin>>a>>b>>c;
 	std::cout<<std::endl;
 	cl5.setNomEtPrenomEtNbre(a,b,c,bar);
-	bar.associerTableClient(&cl5);
+	res=bar.associerTableClient(&cl5);
+		if (res){ //si les clients ont une tabl
+			bar.associerServeurTable((cl5.t));
+				bar.associerCuisinierTable((cl5.t));
 	bar.afficherTables();
+}
 
 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";
 	std::cin>>a>>b>>c;
 	std::cout<<std::endl;
 	cl6.setNomEtPrenomEtNbre(a,b,c,bar);
-	bar.associerTableClient(&cl6);
+	res=bar.associerTableClient(&cl6);
+		if (res){ //si les clients ont une tabl
+			bar.associerServeurTable((cl6.t));
+				bar.associerCuisinierTable((cl6.t));
 	bar.afficherTables();
+}
+
 
 	//bar.clients.push_back(cl0);
   	bar.clients.push_back(cl1);
@@ -169,26 +178,15 @@ bar.afficherTables();
 	//
 	// ///////////////////// premier affichage bar ///////////////////////////////////
 	stock.afficherCarte();
-	std::cout<<"Entrer commande (une boisson et quantité): ";
+
+	while(a!="Q"){
+	std::cout<<"Entrer commande (une boisson et quantité) ou Q et une quantité pour terminer : ";
 	std::cin>>a>>b;
 	std::cout<<std::endl;
  	int i = std::stoi(b);
 	stock.passerCommande(a,i);
 	stock.afficherCarte();
-
-	std::cout<<"Entrer commande (une boisson et quantité): ";
-	std::cin>>a>>b;
-	std::cout<<std::endl;
-	i = std::stoi(b);
-	stock.passerCommande(a,i);
-	stock.afficherCarte();
-
-	std::cout<<"Entrer commande (une boisson et quantité): ";
-	std::cin>>a>>b;
-	std::cout<<std::endl;
-	i = std::stoi(b);
-	stock.passerCommande(a,i);
-	stock.afficherCarte();
+}
 
 
 	// bar.afficherCuisiniers();
@@ -204,7 +202,7 @@ bar.afficherTables();
 	/////partie graphique///////
 // sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
 // sf::CircleShape shape(100.f);
-// shape.setFillCiolor(sf::Color::Green);
+// shape.setFillCtiolor(sf::Color::Green);
 //
 // while (window.isOpen())
 // {

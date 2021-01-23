@@ -97,12 +97,12 @@ int Bar::associerTableClient(Client *c){
 	     i++;
 	   }
 	 }
-	 c->t->setEtat(1);
 	 if(table==0){
 	   std::cout<<"aucune table libre pour le moment"<<std::endl;
 		 std::cout<<std::endl;
 		 return 0;
 	 }else{
+		 c->t->setEtat(1);
 	   std::cout<<"Vous pouvez prendre la table : "<<(c->t->getId())<<std::endl;
 		 std::cout<<std::endl;
 		 return 1;
