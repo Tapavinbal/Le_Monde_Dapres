@@ -1,5 +1,6 @@
 #include <map>
 #include "bar.hh"
+#include "stock.hh"
 
 void Bar::afficherCuisiniers(){
 	for(size_t i=0;i<cuisiniers.size();i++){
@@ -109,12 +110,17 @@ int Bar::associerTableClient(Client *c){
 	}
 }
 
-void Bar::associerCommandeClient(Client* client,std::string boisson,int quantite){
+void Bar::associerCommandeClient(Stock* s,Client* client,std::string boisson,int quantite){
+	//ajouter boisson à commande
 	client->boissons[boisson]+=quantite;
+	//ajouter prix à addition
+	client->setPrix((client->getPrix())+(s->prix[boisson])*quantite);
 	//afficher commande
 	std::cout<<"COMMANDE"<<std::endl;
 	for(auto i:client->boissons){
 		std::cout<<i.first<<" : "<<i.second<<std::endl;
 	}
+	std::cout<<std::endl;
+	std::cout<<"ADDITION : "<<client->getPrix()<<std::endl;
 	std::cout<<std::endl;
 }

@@ -31,23 +31,9 @@ void Client::setNomEtPrenomEtNbre(std::string n,std::string p,int nbre, Bar b){
   //int i=0;
 
   id_client=i++;
-  //nbrePersonnesGp=tailleGroupe;
-  //*bar=b;
 
-  //associer une table à ce groupe
-  //while((table==0)){//&& (i<(bar->tables.size()))){
-  //    if(bar->tables[i].getCapacite()==nbrePersonnesGp){ ///////////////////////marche pas encore
-  //   //   t=bar->tables[i];
-  //     table=1;
-  //   }else{
-  //     i++;
-  //   }
-  // }
-  // std::cout<<bar->tables[i].getId();
 }
 
-// void Client::setNomEtPrenomEtNbre(std::string n,std::string p,int nbre){
-//   	nom=n;
-//   	prenom=p;
-//     nbrePersonnesGp=nbre;
-// }
+void Client::setPrix(float p){
+  prix=p;
+}

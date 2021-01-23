@@ -21,6 +21,8 @@ class Client : public Personne{
 		void setNomEtPrenomEtNbre(std::string n,std::string p,int nbre,Bar b);
 		std::map<std::string,int>boissons;
 		std::map<std::string,int>::iterator i_boisson;
+		void setPrix(float p);
+		float getPrix(){return prix;}
 	private:
 		float prix=0;
 		size_t id_client;

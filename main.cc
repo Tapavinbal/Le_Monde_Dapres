@@ -188,7 +188,7 @@ bar.afficherTables();
 	bool res=stock.passerCommande(a,i);
 	stock.afficherCarte();
 	if(res){
-	bar.associerCommandeClient(&cl2,a,i);
+	bar.associerCommandeClient(&stock,&cl2,a,i);
 }
 }
 
