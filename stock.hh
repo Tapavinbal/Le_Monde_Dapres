@@ -9,9 +9,12 @@ class Stock{
 		void setCarte(std::string s);
 		void setCarte(std::string s, int quantite);
 		void afficherCarte();
+		void afficherStock();
 		bool passerCommande(std::string commande,int nombre);
+		void setPrix(std::string s, float p);
 	private:
 		//std::map<std::string,size_t>reserve;
 		std::map<std::string,int>carte;
+		std::map<std::string,float>prix;
 		std::map<std::string,int>::iterator i;
 };

@@ -7,6 +7,7 @@
 #include "client.hh"
 #include "stock.hh"
 #include "bar.hh"
+#include "commande.hh"
 #include <SFML/Graphics.hpp>
 
 
@@ -30,6 +31,17 @@ int main(){
 	stock.setCarte("tequilla_sunrise",30);
 	stock.setCarte("ricard",10);
 
+	stock.setPrix("bière",4);
+	stock.setPrix("eau_gazeuse",2.5);
+	stock.setPrix("eau",2);
+	stock.setPrix("pina_colada",5.5);
+	stock.setPrix("coca",3);
+	stock.setPrix("mojito",5.5);
+	stock.setPrix("spritz",5.5);
+	stock.setPrix("tequilla_sunrise",5.5);
+	stock.setPrix("ricard",5);
+
+
 	Cuisinier c0("Potter","Harry",30);
 	Cuisinier c1("Daussette","Lory",39);
 	Serveur s0("Dupont","Lisa",35);
@@ -47,18 +59,7 @@ int main(){
 	Table t8(2);
 	Table t9(6);
 
-	//Client cl0("Nezet", "Daran",2,bar);
-	//Client cl1("Nezet", "Dorian",5,bar);
-//	Client cl2;
-	//
-	// cl1.setNomEtPrenomEtNbre("Michel","Brasil",10);
-	//
-	// std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";
-	// std::cin>>a>>b>>c;
-	// std::cout<<std::endl;
-	//
-	// cl0.setNomEtPrenomEtNbre(a,b,c,bar);
-	//
+
 
 	bar.cuisiniers.push_back(c0);
 	bar.cuisiniers.push_back(c1);
@@ -102,60 +103,60 @@ bar.afficherTables();
 		bar.afficherTables();
 	}
 
-	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe (10 max): ";
-	std::cin>>a>>b>>c;
-	std::cout<<std::endl;
-	cl1.setNomEtPrenomEtNbre(a,b,c,bar);
-	res=bar.associerTableClient(&cl1);
-	if (res){ //si les clients ont une table
-	bar.associerServeurTable((cl1.t));
-	bar.associerCuisinierTable((cl1.t));
-	bar.afficherTables();
-}
-
-	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe (10 max) : ";
-	std::cin>>a>>b>>c;
-	std::cout<<std::endl;
-	cl3.setNomEtPrenomEtNbre(a,b,c,bar);
-	res=bar.associerTableClient(&cl3);
-	if (res){ //si les clients ont une table
-	bar.associerServeurTable((cl3.t));
-		bar.associerCuisinierTable((cl3.t));
-	bar.afficherTables();
-}
-
-	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";
-	std::cin>>a>>b>>c;
-	std::cout<<std::endl;
-	cl4.setNomEtPrenomEtNbre(a,b,c,bar);
-	res=bar.associerTableClient(&cl4);
-	if (res){ //si les clients ont une table
-	bar.associerServeurTable((cl4.t));
-		bar.associerCuisinierTable((cl4.t));
-	bar.afficherTables();
-}
-
-	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";
-	std::cin>>a>>b>>c;
-	std::cout<<std::endl;
-	cl5.setNomEtPrenomEtNbre(a,b,c,bar);
-	res=bar.associerTableClient(&cl5);
-		if (res){ //si les clients ont une tabl
-			bar.associerServeurTable((cl5.t));
-				bar.associerCuisinierTable((cl5.t));
-	bar.afficherTables();
-}
-
-	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";
-	std::cin>>a>>b>>c;
-	std::cout<<std::endl;
-	cl6.setNomEtPrenomEtNbre(a,b,c,bar);
-	res=bar.associerTableClient(&cl6);
-		if (res){ //si les clients ont une tabl
-			bar.associerServeurTable((cl6.t));
-				bar.associerCuisinierTable((cl6.t));
-	bar.afficherTables();
-}
+// 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe (10 max): ";
+// 	std::cin>>a>>b>>c;
+// 	std::cout<<std::endl;
+// 	cl1.setNomEtPrenomEtNbre(a,b,c,bar);
+// 	res=bar.associerTableClient(&cl1);
+// 	if (res){ //si les clients ont une table
+// 	bar.associerServeurTable((cl1.t));
+// 	bar.associerCuisinierTable((cl1.t));
+// 	bar.afficherTables();
+// }
+//
+// 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe (10 max) : ";
+// 	std::cin>>a>>b>>c;
+// 	std::cout<<std::endl;
+// 	cl3.setNomEtPrenomEtNbre(a,b,c,bar);
+// 	res=bar.associerTableClient(&cl3);
+// 	if (res){ //si les clients ont une table
+// 	bar.associerServeurTable((cl3.t));
+// 		bar.associerCuisinierTable((cl3.t));
+// 	bar.afficherTables();
+// }
+//
+// 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";
+// 	std::cin>>a>>b>>c;
+// 	std::cout<<std::endl;
+// 	cl4.setNomEtPrenomEtNbre(a,b,c,bar);
+// 	res=bar.associerTableClient(&cl4);
+// 	if (res){ //si les clients ont une table
+// 	bar.associerServeurTable((cl4.t));
+// 		bar.associerCuisinierTable((cl4.t));
+// 	bar.afficherTables();
+// }
+//
+// 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";
+// 	std::cin>>a>>b>>c;
+// 	std::cout<<std::endl;
+// 	cl5.setNomEtPrenomEtNbre(a,b,c,bar);
+// 	res=bar.associerTableClient(&cl5);
+// 		if (res){ //si les clients ont une tabl
+// 			bar.associerServeurTable((cl5.t));
+// 				bar.associerCuisinierTable((cl5.t));
+// 	bar.afficherTables();
+// }
+//
+// 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";
+// 	std::cin>>a>>b>>c;
+// 	std::cout<<std::endl;
+// 	cl6.setNomEtPrenomEtNbre(a,b,c,bar);
+// 	res=bar.associerTableClient(&cl6);
+// 		if (res){ //si les clients ont une tabl
+// 			bar.associerServeurTable((cl6.t));
+// 				bar.associerCuisinierTable((cl6.t));
+// 	bar.afficherTables();
+// }
 
 
 	//bar.clients.push_back(cl0);
@@ -184,8 +185,11 @@ bar.afficherTables();
 	std::cin>>a>>b;
 	std::cout<<std::endl;
  	int i = std::stoi(b);
-	stock.passerCommande(a,i);
+	bool res=stock.passerCommande(a,i);
 	stock.afficherCarte();
+	if(res){
+	bar.associerCommandeClient(&cl2,a,i);
+}
 }
 
 

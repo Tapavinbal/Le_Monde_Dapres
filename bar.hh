@@ -5,6 +5,7 @@
 #include "serveur.hh"
 #include "cuisinier.hh"
 #include "client.hh"
+#include <map>
 
 class Client;
 class Bar{
@@ -21,5 +22,6 @@ class Bar{
 		void associerServeurTable(Table *t);
 		int associerTableClient(Client *c);
 		void associerCuisinierTable(Table* t);
+		void associerCommandeClient(Client *client,std::string boisson,int quantite);
 	private:
 };

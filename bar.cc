@@ -1,4 +1,4 @@
-
+#include <map>
 #include "bar.hh"
 
 void Bar::afficherCuisiniers(){
@@ -107,4 +107,14 @@ int Bar::associerTableClient(Client *c){
 		 std::cout<<std::endl;
 		 return 1;
 	}
+}
+
+void Bar::associerCommandeClient(Client* client,std::string boisson,int quantite){
+	client->boissons[boisson]+=quantite;
+	//afficher commande
+	std::cout<<"COMMANDE"<<std::endl;
+	for(auto i:client->boissons){
+		std::cout<<i.first<<" : "<<i.second<<std::endl;
+	}
+	std::cout<<std::endl;
 }

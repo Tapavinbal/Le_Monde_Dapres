@@ -6,7 +6,6 @@
 #include "personne.hh"
 
 
-//Classe abstraite
 class Table;
 class Personnel : public Personne{
 	public:
