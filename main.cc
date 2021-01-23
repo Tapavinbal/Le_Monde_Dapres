@@ -88,7 +88,7 @@ bar.afficherTables();
 	Client cl5;
 	Client cl6;
 
-
+while(1){
 	//cl1.setNomEtPrenomEtNbre("Michel","Brasil",10);
 	//
 
@@ -114,49 +114,6 @@ bar.afficherTables();
 // 	bar.afficherTables();
 // }
 //
-// 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe (10 max) : ";
-// 	std::cin>>a>>b>>c;
-// 	std::cout<<std::endl;
-// 	cl3.setNomEtPrenomEtNbre(a,b,c,bar);
-// 	res=bar.associerTableClient(&cl3);
-// 	if (res){ //si les clients ont une table
-// 	bar.associerServeurTable((cl3.t));
-// 		bar.associerCuisinierTable((cl3.t));
-// 	bar.afficherTables();
-// }
-//
-// 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";
-// 	std::cin>>a>>b>>c;
-// 	std::cout<<std::endl;
-// 	cl4.setNomEtPrenomEtNbre(a,b,c,bar);
-// 	res=bar.associerTableClient(&cl4);
-// 	if (res){ //si les clients ont une table
-// 	bar.associerServeurTable((cl4.t));
-// 		bar.associerCuisinierTable((cl4.t));
-// 	bar.afficherTables();
-// }
-//
-// 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";
-// 	std::cin>>a>>b>>c;
-// 	std::cout<<std::endl;
-// 	cl5.setNomEtPrenomEtNbre(a,b,c,bar);
-// 	res=bar.associerTableClient(&cl5);
-// 		if (res){ //si les clients ont une tabl
-// 			bar.associerServeurTable((cl5.t));
-// 				bar.associerCuisinierTable((cl5.t));
-// 	bar.afficherTables();
-// }
-//
-// 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe : ";
-// 	std::cin>>a>>b>>c;
-// 	std::cout<<std::endl;
-// 	cl6.setNomEtPrenomEtNbre(a,b,c,bar);
-// 	res=bar.associerTableClient(&cl6);
-// 		if (res){ //si les clients ont une tabl
-// 			bar.associerServeurTable((cl6.t));
-// 				bar.associerCuisinierTable((cl6.t));
-// 	bar.afficherTables();
-// }
 
 
 	//bar.clients.push_back(cl0);
@@ -190,6 +147,21 @@ bar.afficherTables();
 	if(res){
 	bar.associerCommandeClient(&stock,&cl2,a,i);
 }
+}
+std::cout<<std::endl;
+std::cout<<"VOUS DEVEZ PAYER : "<<cl2.getPrix()<<" €"<<std::endl;
+std::cout<<std::endl;
+while(a!="OK"){
+std::cout<<"Tapez OK quand le payement a été effectué : ";
+std::cin>>a;
+}
+std::cout<<std::endl;
+std::cout<<std::endl;
+std::cout<<std::endl;
+std::cout<<std::endl;
+std::cout<<std::endl;
+std::cout<<std::endl;
+
 }
 
 

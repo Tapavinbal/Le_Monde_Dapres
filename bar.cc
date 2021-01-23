@@ -121,6 +121,6 @@ void Bar::associerCommandeClient(Stock* s,Client* client,std::string boisson,int
 		std::cout<<i.first<<" : "<<i.second<<std::endl;
 	}
 	std::cout<<std::endl;
-	std::cout<<"ADDITION : "<<client->getPrix()<<std::endl;
+	std::cout<<"ADDITION : "<<client->getPrix()<<" €"<<std::endl;
 	std::cout<<std::endl;
 }
