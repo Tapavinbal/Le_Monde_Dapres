@@ -20,5 +20,5 @@ Serveur::Serveur(string n, string p, int h):Personnel(n,p){
 Serveur::~Serveur(){}
 
 void Serveur::sePresenter(){
-	std::cout<<"Voici le serveur "<< getNom() << " " << getPrenom() <<  " (" << getRegime() << ")" << std::endl;
+	std::cout<< getNom() << " " << getPrenom() <<  " (" << getRegime() << " h)" << std::endl;
 }

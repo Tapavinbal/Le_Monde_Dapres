@@ -10,7 +10,7 @@ class Serveur : public Personnel{
 	public:
 		// std::vector<Table> tables;		//Le numéro des tables attitrées
 		static std::size_t i;
-		Serveur();
+		//Serveur();
 		Serveur(std::string n, std::string p, int h);
 		~Serveur();
 		std::size_t getId() const {return id_serveur;}
@@ -21,5 +21,5 @@ class Serveur : public Personnel{
 	private:
 		std::size_t id_serveur;
 		// int nbre_tables=0;
-		int regime;
+		//int regime;
 };

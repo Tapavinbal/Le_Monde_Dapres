@@ -18,6 +18,16 @@ void Bar::afficherServeurs(){
 		std::cout<<"contrat : "<<serveurs[i].getRegime()<<" h"<<std::endl;
 	}
 	std::cout<<std::endl;
+	// for(size_t i=0;i<serveurs.size();i++){
+	// 	serveurs[i].sePresenter();
+	// 	//std::cout<<"Client "<<clients[i].getId()<<" : "<<clients[i].getNom()<<" "<<clients[i].getPrenom()<<std::endl;
+	// }
+	// std::cout<<std::endl;
+	// // for(size_t i=0;i<serveurs.size();i++){
+	// // 	std::cout<<serveurs[i].getPrenom()<<" "<<serveurs[i].getNom()<<" - ";
+	// // 	std::cout<<"contrat : "<<serveurs[i].getRegime()<<" h"<<std::endl;
+	// // }
+	// // std::cout<<std::endl;
 }
 
 void Bar::afficherTables(){
@@ -47,10 +57,12 @@ void Bar::simulationTables(){
 
 void Bar::afficherClients(){
 	for(size_t i=0;i<clients.size();i++){
-		std::cout<<"Client "<<clients[i].getId()<<" : "<<clients[i].getNom()<<" "<<clients[i].getPrenom()<<std::endl;
+		clients[i].sePresenter();
+		//std::cout<<"Client "<<clients[i].getId()<<" : "<<clients[i].getNom()<<" "<<clients[i].getPrenom()<<std::endl;
 	}
 	std::cout<<std::endl;
 }
+
 
 
 void Bar::associerServeurTable(Table* t){

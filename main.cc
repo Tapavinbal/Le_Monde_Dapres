@@ -137,6 +137,15 @@ int main(){
 	bar.clients.push_back(cl8);
 	bar.clients.push_back(cl9);
 
+	std::cout<<"BAR LE MONDE D'APRES"<<std::endl<<std::endl;
+	std::cout<<"Serveurs qui travaillent aujourd'hui :"<<std::endl;
+	bar.afficherServeurs();
+	std::cout<<"Cuisiniers qui travaillent aujourd'hui :"<<std::endl;
+	bar.afficherCuisiniers();
+	std::cout<<"Tapez OK pour commencer le service : ";
+	std::cin>>a;
+	std::cout<<std::endl;
+
 	//boucle principale
 	while(sortie!="Q"){
 
@@ -211,9 +220,10 @@ int main(){
 	std::system("clear");
 	std::cout<<"RESUME DE LA SOIREE : "<<std::endl<<std::endl;
 	std::cout<<"CLIENTS : "<<std::endl;
-	for(int j=0;j<i;j++){
-		bar.clients[j].sePresenter();
-	}
+	// for(int j=0;j<i;j++){
+	// 	bar.clients[j].sePresenter();
+	// }
+	bar.afficherClients();
 	std::cout<<std::endl;
 	std::cout<<"STOCK : "<<std::endl;
 	stock.afficherStock();
