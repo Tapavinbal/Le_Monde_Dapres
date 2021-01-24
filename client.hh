@@ -15,7 +15,7 @@ class Client : public Personne{
 		Client(std::string n, std::string p, size_t tailleGroupe, Bar b);
 		int getNbre(){return nbrePersonnesGp;}
 		void setNomEtPrenomEtNbre(std::string n,std::string p,int nbre,Bar b);
-		std::map<std::string,int>boissons;
+		std::map<std::string,int>boissons; //tout ce que le groupe a commandé
 		std::map<std::string,int>::iterator i_boisson;
 		void setPrix(float p);
 		float getPrix(){return prix;}
