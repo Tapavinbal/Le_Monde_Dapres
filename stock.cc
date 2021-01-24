@@ -40,13 +40,15 @@ bool Stock::passerCommande(std::string commande, int nombre){
     carte[commande]-=nombre;
     return 1;
   }else{
-    if(commande!="Q"){
-    std::cout<<"il ne reste plus assez de "<<commande<<" pour passer cette commande"<<std::endl<<std::endl;
-  }
+
+    std::cout<<"cette boisson n'est pas diponible"<<std::endl<<std::endl;
+
     return 0; ////////////////pour dire qu'il y a une erreur, peut etre pas la meilleure façon de faire
   }
 }else{
+  if(commande!="Q"){
   std::cout<<"cette boisson n'est pas diponible"<<std::endl<<std::endl;
+}
   return 0;
 }
 }

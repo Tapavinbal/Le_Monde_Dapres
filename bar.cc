@@ -110,13 +110,29 @@ int Bar::associerTableClient(Client *c){
 	}
 }
 
+void Bar::retirerTableClient(Client *c){
+	c->t->setEtat(0);
+	c->t=NULL;
+
+}
+
 void Bar::associerCommandeClient(Stock* s,Client* client,std::string boisson,int quantite){
 	//ajouter boisson à commande
 	client->boissons[boisson]+=quantite;
 	//ajouter prix à addition
 	client->setPrix((client->getPrix())+(s->prix[boisson])*quantite);
 	//afficher commande
-	std::cout<<"COMMANDE"<<std::endl;
+	// std::cout<<"VOTRE COMMANDE"<<std::endl;
+	// for(auto i:client->boissons){
+	// 	std::cout<<i.first<<" : "<<i.second<<std::endl;
+	// }
+	// std::cout<<std::endl;
+	// std::cout<<"ADDITION : "<<client->getPrix()<<" €"<<std::endl;
+	// std::cout<<std::endl;
+}
+
+void Bar::afficherCommandeClient(Stock* s,Client* client){
+	std::cout<<"VOTRE COMMANDE"<<std::endl;
 	for(auto i:client->boissons){
 		std::cout<<i.first<<" : "<<i.second<<std::endl;
 	}

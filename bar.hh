@@ -22,7 +22,9 @@ class Bar{
 		void afficherClients();
 		void associerServeurTable(Table *t);
 		int associerTableClient(Client *c);
+		void retirerTableClient(Client *c);
 		void associerCuisinierTable(Table* t);
 		void associerCommandeClient(Stock *s,Client *client,std::string boisson,int quantite);
+		void afficherCommandeClient(Stock* s,Client* client);
 	private:
 };

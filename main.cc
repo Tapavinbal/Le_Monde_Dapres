@@ -59,7 +59,7 @@ int main(){
 	Table t8(2);
 	Table t9(6);
 
-
+int res=0; //clients ont une table
 
 	bar.cuisiniers.push_back(c0);
 	bar.cuisiniers.push_back(c1);
@@ -79,7 +79,7 @@ int main(){
 	bar.tables.push_back(t8);
 	bar.tables.push_back(t9);
 
-bar.afficherTables();
+
 	//Client cl0("Nezet", "Daran",2,bar);
 	Client cl1;
 	Client cl2;
@@ -87,83 +87,89 @@ bar.afficherTables();
 	Client cl4;
 	Client cl5;
 	Client cl6;
+	Client cl7;
+	Client cl8;
+	Client cl9;
 
-while(1){
-	//cl1.setNomEtPrenomEtNbre("Michel","Brasil",10);
-	//
+bar.clients.push_back(cl2);
+	bar.clients.push_back(cl1);
 
-	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe (10 max): ";
-	std::cin>>a>>b>>c;
-	std::cout<<std::endl;
-	cl2.setNomEtPrenomEtNbre(a,b,c,bar);
-	int res=bar.associerTableClient(&cl2);
-	if (res){ //si les clients ont une table
-		bar.associerServeurTable((cl2.t));
-		bar.associerCuisinierTable((cl2.t));
-		bar.afficherTables();
-	}
-
-// 	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe (10 max): ";
-// 	std::cin>>a>>b>>c;
-// 	std::cout<<std::endl;
-// 	cl1.setNomEtPrenomEtNbre(a,b,c,bar);
-// 	res=bar.associerTableClient(&cl1);
-// 	if (res){ //si les clients ont une table
-// 	bar.associerServeurTable((cl1.t));
-// 	bar.associerCuisinierTable((cl1.t));
-// 	bar.afficherTables();
-// }
-//
-
-
-	//bar.clients.push_back(cl0);
-  	bar.clients.push_back(cl1);
-	bar.clients.push_back(cl2);
 	bar.clients.push_back(cl3);
 	bar.clients.push_back(cl3);
 	bar.clients.push_back(cl4);
 	bar.clients.push_back(cl5);
+	bar.clients.push_back(cl6);
+	bar.clients.push_back(cl7);
+	bar.clients.push_back(cl8);
+	bar.clients.push_back(cl9);
 
+int i=0;
+std::string sortie=" ";
+std::string carte=" ";
 
+while(sortie!="Q"){
+	std::system("clear");
 
-	// bar.associerServeurTable(s0,t3);
-	// bar.associerServeurTable(s1,t1);
-	// bar.associerServeurTable(s1,t2);
+	sortie=" ";
+	carte=" ";
+	bar.afficherTables();
+do{
+	std::cout<<"Entrer nom et prénom client et nombre de personnes du groupe (10 max): ";
+	std::cin>>a>>b>>c;
+	std::cout<<std::endl;
+	bar.clients[i].setNomEtPrenomEtNbre(a,b,c,bar);
+	res=bar.associerTableClient(&(bar.clients[i]));
+	if (res){ //si les clients ont une table
+		bar.associerServeurTable((bar.clients[i].t));
+		bar.associerCuisinierTable((bar.clients[i].t));
+		bar.afficherTables();
+	}
+}while(!res);
 
-	// ////////Initialistion par tableau (plus facile pour la suite)/////////////////
-	// ////Pas si facile que ça a faire, a mettre en place quand on pourra changer les infos de tout le monde
-	//
-	//
-	// ///////////////////// premier affichage bar ///////////////////////////////////
-	stock.afficherCarte();
+	do{
+	std::cout<<"Tapez OK quand vous êtes installés pour accéder à notre carte : ";
+	std::cin>>carte;
+	std::cout<<std::endl;
+
+}while(carte!="OK");
+std::system("clear");
+
 
 	while(a!="Q"){
-	std::cout<<"Entrer commande (une boisson et quantité) ou Q et une quantité pour terminer : ";
+		stock.afficherCarte();
+	bar.afficherCommandeClient(&stock,&(bar.clients[i]));
+	std::cout<<"Ajoutez commande et quantité (exemple : 'coca 6') ou 'Q 0' pour terminer la commande : ";
 	std::cin>>a>>b;
 	std::cout<<std::endl;
- 	int i = std::stoi(b);
-	bool res=stock.passerCommande(a,i);
+ 	int temp = std::stoi(b);
+	bool res=stock.passerCommande(a,temp);
 	stock.afficherCarte();
 	if(res){
-	bar.associerCommandeClient(&stock,&cl2,a,i);
+	bar.associerCommandeClient(&stock,&(bar.clients[i]),a,temp);
 }
+std::system("clear");
 }
+std::cout<<"VOUS DEVEZ PAYER : "<<bar.clients[i].getPrix()<<" €"<<std::endl;
 std::cout<<std::endl;
-std::cout<<"VOUS DEVEZ PAYER : "<<cl2.getPrix()<<" €"<<std::endl;
-std::cout<<std::endl;
-while(a!="OK"){
+while(sortie!="OK" ){
 std::cout<<"Tapez OK quand le payement a été effectué : ";
-std::cin>>a;
+std::cin>>sortie;
 }
 std::cout<<std::endl;
-std::cout<<std::endl;
-std::cout<<std::endl;
-std::cout<<std::endl;
-std::cout<<std::endl;
+bar.retirerTableClient(&(bar.clients[i]));
+i++;
+do {
+std::cout<<"Tapez C pour installer un nouveau groupe ou Q si la soirée est terminée : ";
+std::cin>>sortie;
+}while(sortie!="C" && sortie!="Q");
 std::cout<<std::endl;
 
 }
 
+std::cout<<"SOIREE : "<<std::endl;
+for(int j=0;j<i;j++){
+	std::cout<<bar.clients[j].getNom()<<" "<<bar.clients[j].getPrenom()<<" "<<bar.clients[j].getPrix()<<" €"<<std::endl;
+}
 
 	// bar.afficherCuisiniers();
 	// bar.afficherServeurs();
