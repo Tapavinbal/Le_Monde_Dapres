@@ -28,5 +28,5 @@ void Client::setPrix(float p){
 }
 
 void Client::sePresenter(){
-	std::cout<<"Voici le client "<< getNom() << " " << getPrenom() << std::endl;
+	std::cout<<"Client n°"<<id_client<<" : "<< getNom() << " " << getPrenom() << " " << getPrix() <<" €" <<std::endl;
 }

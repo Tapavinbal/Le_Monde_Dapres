@@ -1,6 +1,6 @@
 CC=g++
 CCFLAGS= -Wall -Werror -std=c++11 -g
-LIBFLAGS=-lsfml-graphics -lsfml-window -lsfml-system
+LIBFLAGS=
 SRC= $(wildcard *.cc)
 OBJ= $(SRC:.cc=.o)
 TST_DIR=tests/

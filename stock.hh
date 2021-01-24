@@ -12,7 +12,7 @@ class Stock{
 		void setCarte(std::string s, int quantite);
 		void afficherCarte();
 		void afficherStock();
-		bool passerCommande(std::string commande,int nombre);
+		int passerCommande(std::string commande,int nombre);
 		void setPrix(std::string s, float p);
 	private:
 		//std::map<std::string,size_t>reserve;

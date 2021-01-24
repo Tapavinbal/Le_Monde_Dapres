@@ -36,19 +36,21 @@ void Stock::afficherCarte(){
 }
 
 
-bool Stock::passerCommande(std::string commande, int nombre){
+int Stock::passerCommande(std::string commande, int nombre){
     if (carte.find(commande) != carte.end() ){
         if(carte.find(commande)->second>=nombre){
             carte[commande]-=nombre;
-            return 1;
+            return 1; //si la commande a fonctionné
         }else{
-            std::cout<<"cette boisson n'est pas diponible"<<std::endl<<std::endl;
-            return 0; ////////////////pour dire qu'il y a une erreur, peut etre pas la meilleure façon de faire
+            std::cout<<"Il ne nous reste que "<<carte.find(commande)->second<<" "<<commande<<std::endl<<std::endl;
+            return 0; //si la commande n'a pas pu être réalisée
         }
     }else{
         if(commande!="Q"){
-            std::cout<<"cette boisson n'est pas diponible"<<std::endl<<std::endl;
-        }
-        return 0;
+            std::cout<<"Ce produit n'est pas diponible"<<std::endl<<std::endl;
+            return 0;
+        }else{
+          return 2; //si on a demandé de quitter les commandes
+      }
     }
 }

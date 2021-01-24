@@ -177,10 +177,13 @@ int main(){
 			std::cin>>a>>b;
 			std::cout<<std::endl;
  			int temp = std::stoi(b);
-			bool res=stock.passerCommande(a,temp);
-			stock.afficherCarte();
-			if(res){
+			int res=stock.passerCommande(a,temp);
+			if(res==1){
 				bar.associerCommandeClient(&stock,&(bar.clients[i]),a,temp);
+			}else if(res==0){
+				std::cout<<"Tapez OK : ";
+				std::cin>>a;
+				std::cout<<std::endl;
 			}
 			std::system("clear");
 		}
@@ -205,9 +208,11 @@ int main(){
 	}
 
 	//à la fin de la soirée on affiche les clients ayant utilisé cette tablette et le stock restant
-	std::cout<<"SOIREE : "<<std::endl;
+	std::system("clear");
+	std::cout<<"RESUME DE LA SOIREE : "<<std::endl<<std::endl;
+	std::cout<<"CLIENTS : "<<std::endl;
 	for(int j=0;j<i;j++){
-		std::cout<<bar.clients[j].getNom()<<" "<<bar.clients[j].getPrenom()<<" "<<bar.clients[j].getPrix()<<" €"<<std::endl;
+		bar.clients[j].sePresenter();
 	}
 	std::cout<<std::endl;
 	std::cout<<"STOCK : "<<std::endl;
