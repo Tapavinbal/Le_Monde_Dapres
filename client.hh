@@ -22,6 +22,5 @@ class Client : public Personne{
 		void sePresenter();
 	private:
 		float prix=0;
-		size_t id_client;
 		int nbrePersonnesGp;
 };

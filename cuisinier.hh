@@ -10,7 +10,6 @@ class Cuisinier : public Personnel{
 		static std::size_t i;
 		Cuisinier(std::string n, std::string p, int h);
 		~Cuisinier();
-		std::size_t getId() const {return id_cuisinier;}
 		void sePresenter();
 	private:
 		std::size_t id_cuisinier;
