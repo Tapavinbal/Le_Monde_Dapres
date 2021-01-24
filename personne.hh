@@ -5,11 +5,11 @@
 //Classe abstraite
 class Personne{
 	public:
-		Personne(std::string n, std::string p);	
+		Personne(std::string n, std::string p);
 		~Personne();
 		std::string getNom() {return nom;}
 		std::string getPrenom() {return prenom;}
-		virtual void sePresenter() = 0;
+		virtual void sePresenter() = 0; //méthode vituelle pure => classe abstraite
 	protected:
 		std::string nom;
 		std::string prenom;

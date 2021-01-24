@@ -23,5 +23,3 @@ void Table::changerEtat(){
 void Table::setEtat(int e){
   	etat=e;
 }
-
-void Table::attribuerServeur(Serveur &s){}

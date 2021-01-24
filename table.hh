@@ -23,7 +23,7 @@ class Table{
 		void setEtat(int e);
 	private:
 		std::size_t id_table;
-		bool etat; //0 pour libre et 1 pour occupe
+		bool etat; //0 pour libre et 1 pour occupée
 		std::size_t capacite;
 
 };

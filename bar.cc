@@ -6,36 +6,22 @@ Bar::~Bar(){}
 
 void Bar::afficherCuisiniers(){
 	for(size_t i=0;i<cuisiniers.size();i++){
-		std::cout<<cuisiniers[i].getPrenom()<<" "<<cuisiniers[i].getNom()<<" - ";
-		std::cout<<"contrat : "<<cuisiniers[i].getRegime()<<" h"<<std::endl;
+		cuisiniers[i].sePresenter();
 	}
 	std::cout<<std::endl;
 }
 
 void Bar::afficherServeurs(){
 	for(size_t i=0;i<serveurs.size();i++){
-		std::cout<<serveurs[i].getPrenom()<<" "<<serveurs[i].getNom()<<" - ";
-		std::cout<<"contrat : "<<serveurs[i].getRegime()<<" h"<<std::endl;
+		serveurs[i].sePresenter();
 	}
 	std::cout<<std::endl;
-	// for(size_t i=0;i<serveurs.size();i++){
-	// 	serveurs[i].sePresenter();
-	// 	//std::cout<<"Client "<<clients[i].getId()<<" : "<<clients[i].getNom()<<" "<<clients[i].getPrenom()<<std::endl;
-	// }
-	// std::cout<<std::endl;
-	// // for(size_t i=0;i<serveurs.size();i++){
-	// // 	std::cout<<serveurs[i].getPrenom()<<" "<<serveurs[i].getNom()<<" - ";
-	// // 	std::cout<<"contrat : "<<serveurs[i].getRegime()<<" h"<<std::endl;
-	// // }
-	// // std::cout<<std::endl;
 }
 
 void Bar::afficherTables(){
 	for(size_t i=0;i<tables.size();i++){
 		std::cout<<"table n°"<<tables[i].getId()<<" - ";
 		std::cout<<tables[i].getCapacite()<<" places"<<" - ";
-		//std::cout<<"serveur : "<<tables[i].getServeur().getPrenom()<<std::endl;       //////////////////probleme fait seg fault
-		//<<" "<<tables[i].getServeur().getNom()<<" - "<<std::endl;
 		if(tables[i].getEtat()==1){
 			std::cout<<"table occupée"<<std::endl;
 		}else{
@@ -45,6 +31,7 @@ void Bar::afficherTables(){
 	std::cout<<std::endl;
 }
 
+//permet de simuler l'occupation du bar
 void Bar::simulationTables(){
 	srand(time(NULL));
 	size_t limite = rand()%20;		//Pour un nombre aléatoire de fois qu'on peut fixer
@@ -58,13 +45,11 @@ void Bar::simulationTables(){
 void Bar::afficherClients(){
 	for(size_t i=0;i<clients.size();i++){
 		clients[i].sePresenter();
-		//std::cout<<"Client "<<clients[i].getId()<<" : "<<clients[i].getNom()<<" "<<clients[i].getPrenom()<<std::endl;
 	}
 	std::cout<<std::endl;
 }
 
-
-
+//permet de mettre une table en attribut d'un serveur
 void Bar::associerServeurTable(Table* t){
 	unsigned long int i=0;
 	int temp=50;
@@ -78,8 +63,7 @@ void Bar::associerServeurTable(Table* t){
 	}
 	t->serveur=&(serveurs[i_serveur]);
 	serveurs[i_serveur].tables.push_back(*t);
-	serveurs[i_serveur].augmenterNbTables();
-	//std::cout<<serveurs[i].getNbTables()<<std::endl;
+	serveurs[i_serveur].augmenterNbTables(); //augmenter le nbre de tables dont le serveur s'occupe
 	std::cout<<serveurs[i_serveur].getPrenom()<<" est le serveur de la table "<<t->getId()<<std::endl;
 }
 
@@ -97,7 +81,6 @@ void Bar::associerCuisinierTable(Table* t){
 	t->cuisinier=&(cuisiniers[i_cuisinier]);
 	cuisiniers[i_cuisinier].tables.push_back(*t);
 	cuisiniers[i_cuisinier].augmenterNbTables();
-	//std::cout<<serveurs[i].getNbTables()<<std::endl;
 	std::cout<<cuisiniers[i_cuisinier].getPrenom()<<" est le cuisinier de la table "<<t->getId()<<std::endl;
 	std::cout<<std::endl;
 }
@@ -107,10 +90,10 @@ int Bar::associerTableClient(Client *c){
 	unsigned long int i=0;
 	int temp=50;
 	//associer une table à ce groupe
-	while( (i<(tables.size()))){
-	    if((tables[i].getEtat()==0)){
-			if(tables[i].getCapacite()>=c->getNbre()){
-				if(((tables[i].getCapacite())-(c->getNbre()))<temp){
+	while( (i<(tables.size()))){ //on parcourt toutes les tables
+	    if((tables[i].getEtat()==0)){ //si la table est libre
+			if(tables[i].getCapacite()>=c->getNbre()){ //si la capcacité de la table est suffisante
+				if(((tables[i].getCapacite())-(c->getNbre()))<temp){ //on regarde si cette table est plus adaptée que la dernière table sélectionnée
 	    			c->t=&(tables[i]);
 	     			table=1;
 					temp=(tables[i].getCapacite())-(c->getNbre());
@@ -126,7 +109,7 @@ int Bar::associerTableClient(Client *c){
 		std::cout<<std::endl;
 		return 0;
 	}else{
-		c->t->setEtat(1);
+		c->t->setEtat(1); //la table est maintenant occupée
 	    std::cout<<"Vous pouvez prendre la table n° : "<<(c->t->getId())<<std::endl;
 		std::cout<<std::endl;
 		return 1;
@@ -136,7 +119,6 @@ int Bar::associerTableClient(Client *c){
 void Bar::retirerTableClient(Client *c){
 	c->t->setEtat(0);
 	c->t=NULL;
-
 }
 
 void Bar::associerCommandeClient(Stock* s,Client* client,std::string boisson,int quantite){
@@ -144,14 +126,6 @@ void Bar::associerCommandeClient(Stock* s,Client* client,std::string boisson,int
 	client->boissons[boisson]+=quantite;
 	//ajouter prix à addition
 	client->setPrix((client->getPrix())+(s->prix[boisson])*quantite);
-	//afficher commande
-	// std::cout<<"VOTRE COMMANDE"<<std::endl;
-	// for(auto i:client->boissons){
-	// 	std::cout<<i.first<<" : "<<i.second<<std::endl;
-	// }
-	// std::cout<<std::endl;
-	// std::cout<<"ADDITION : "<<client->getPrix()<<" €"<<std::endl;
-	// std::cout<<std::endl;
 }
 
 void Bar::afficherCommandeClient(Stock* s,Client* client){

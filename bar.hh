@@ -14,22 +14,26 @@
 class Client;
 class Bar{
 	public:
-		//vecteurs à mettre en private mais j'ai eu la flemme
 		std::vector<Table>tables;
 		std::vector<Serveur>serveurs;
 		std::vector<Cuisinier>cuisiniers;
 		std::vector<Client>clients;
+		
 		~Bar();
+
 		void afficherCuisiniers();
 		void afficherServeurs();
-		void simulationTables();
 		void afficherTables();
 		void afficherClients();
+		void afficherCommandeClient(Stock* s,Client* client);
+
+		void simulationTables();
+
 		void associerServeurTable(Table *t);
 		int associerTableClient(Client *c);
-		void retirerTableClient(Client *c);
 		void associerCuisinierTable(Table* t);
 		void associerCommandeClient(Stock *s,Client *client,std::string boisson,int quantite);
-		void afficherCommandeClient(Stock* s,Client* client);
+
+		void retirerTableClient(Client *c);
 	private:
 };

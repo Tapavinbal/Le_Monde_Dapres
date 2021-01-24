@@ -13,7 +13,6 @@ class Client : public Personne{
 		Client();
 		~Client();
 		Client(std::string n, std::string p, size_t tailleGroupe, Bar b);
-		//std::size_t getId() {return id_client;}
 		int getNbre(){return nbrePersonnesGp;}
 		void setNomEtPrenomEtNbre(std::string n,std::string p,int nbre,Bar b);
 		std::map<std::string,int>boissons;

@@ -35,7 +35,7 @@ void Stock::afficherCarte(){
     std::cout<<std::endl;
 }
 
-
+//permet de diminuer le stock et renvoie une valeur différente en fonction de la réussite de la commande
 int Stock::passerCommande(std::string commande, int nombre){
     if (carte.find(commande) != carte.end() && nombre!=0){
         if(carte.find(commande)->second>=nombre){

@@ -15,8 +15,6 @@ class Stock{
 		int passerCommande(std::string commande,int nombre);
 		void setPrix(std::string s, float p);
 	private:
-		//std::map<std::string,size_t>reserve;
 		std::map<std::string,int>carte;
-
 		std::map<std::string,int>::iterator i;
 };

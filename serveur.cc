@@ -9,16 +9,9 @@ Serveur::Serveur(string n, string p, int h):Personnel(n,p){
 	id_serveur = i++;
 }
 
-// void Serveur::ajouterTable(Table t){
-// 	tables.push_back(t);
-// }
-//
-// void Serveur::augmenterNbTables(){
-// 	nbre_tables++;
-// }
-
 Serveur::~Serveur(){}
 
 void Serveur::sePresenter(){
-	std::cout<< getNom() << " " << getPrenom() <<  " (" << getRegime() << " h)" << std::endl;
+	std::cout<<getPrenom()<<" "<<getNom()<<" - ";
+	std::cout<<"contrat : "<<getRegime()<<" h"<<std::endl;
 }

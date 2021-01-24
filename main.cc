@@ -9,13 +9,12 @@
 #include "bar.hh"
 
 int main(){
-	/////////////////////////créer bar////////////////////
 	Bar bar;
 
 	std::string a;
 	std::string b;
 	int c;
-	int res=0; //clients ont une table
+	int res=0; //1 si clients ont une table
 	int i=0;
 	std::string sortie=" ";//pour cin
 	std::string carte=" ";//pour cin
@@ -45,7 +44,6 @@ int main(){
 	stock.setPrix("ricard",5);
 	stock.setPrix("frites",4);
 	stock.setPrix("planche_de_charcuterie",8);
-
 
 	Cuisinier c0("Potter","Harry",24);
 	Cuisinier c1("Daussette","Lory",39);
@@ -137,6 +135,7 @@ int main(){
 	bar.clients.push_back(cl8);
 	bar.clients.push_back(cl9);
 
+	//démarrage
 	std::cout<<"BAR LE MONDE D'APRES"<<std::endl<<std::endl;
 	std::cout<<"Serveurs qui travaillent aujourd'hui :"<<std::endl;
 	bar.afficherServeurs();
@@ -169,7 +168,7 @@ int main(){
 				bar.associerCuisinierTable((bar.clients[i].t));
 				bar.afficherTables();
 			}
-		}while(!res);
+		}while(!res); //tant qu'on n'a pas un groupe qui a obtenu une table libre
 
 		do{
 			std::cout<<"Tapez OK quand vous êtes installés pour accéder à notre carte : ";
@@ -185,16 +184,16 @@ int main(){
 			std::cout<<"Passez une commande (exemple : 'coca 6') puis faites Entrée. Quand vous avez passez toutes vos commandes et que vous voulez payer faites 'Q 0': ";
 			std::cin>>a>>b;
 			std::cout<<std::endl;
- 			int temp = std::stoi(b);
+ 			int temp = std::stoi(b); //convertir string en int
 			int res=stock.passerCommande(a,temp);
-			if(res==1){
+			if(res==1){ //la commande a été passée
 				bar.associerCommandeClient(&stock,&(bar.clients[i]),a,temp);
-			}else if(res==0){
+			}else if(res==0){ //il y a eu un problème
 				std::cout<<"Tapez OK : ";
 				std::cin>>a;
 				std::cout<<std::endl;
 			}
-			std::system("clear");
+			std::system("clear"); //effacer le terminal
 		}
 
 		//payement de ce groupe
@@ -206,7 +205,7 @@ int main(){
 		}
 		std::cout<<std::endl;
 		bar.retirerTableClient(&(bar.clients[i]));
-		i++;
+		i++; //pour passer au 2eme client du tableau
 
 		//choisir si un autre groupe est accueilli ou si le bar ferme
 		do {
@@ -220,9 +219,6 @@ int main(){
 	std::system("clear");
 	std::cout<<"RESUME DE LA SOIREE : "<<std::endl<<std::endl;
 	std::cout<<"CLIENTS : "<<std::endl;
-	// for(int j=0;j<i;j++){
-	// 	bar.clients[j].sePresenter();
-	// }
 	bar.afficherClients();
 	std::cout<<std::endl;
 	std::cout<<"STOCK : "<<std::endl;

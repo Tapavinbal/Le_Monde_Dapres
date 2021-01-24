@@ -2,7 +2,6 @@
 #include<iostream>
 #include <string>
 #include "personnel.hh"
-//#include "table.hh"
 #include <vector>
 
 class Table;
@@ -15,5 +14,4 @@ class Cuisinier : public Personnel{
 		void sePresenter();
 	private:
 		std::size_t id_cuisinier;
-
 };
