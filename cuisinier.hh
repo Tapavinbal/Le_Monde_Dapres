@@ -11,6 +11,7 @@ class Cuisinier : public Personnel{
 		// std::vector<Table> tables;		//Le numéro des tables attitrées
 		static std::size_t i;
 		Cuisinier(std::string n, std::string p, int h);
+		~Cuisinier();
 		std::string getNom() {return nom;}
 		std::string getPrenom() {return prenom;}
 		int getRegime() {return regime;}

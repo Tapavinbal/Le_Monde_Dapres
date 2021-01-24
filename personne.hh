@@ -6,6 +6,7 @@
 class Personne{
 	public:
 		Personne(std::string n, std::string p);	
+		~Personne();
 		virtual std::string getNom()=0;
 		virtual std::string getPrenom()=0;
 	protected:

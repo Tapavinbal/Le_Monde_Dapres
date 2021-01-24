@@ -10,6 +10,8 @@ Cuisinier::Cuisinier(string n, string p, int h):Personnel(n,p){
 	regime = h;
 	id_cuisinier = i++;
 }
+
+Cuisinier::~Cuisinier(){}
 // void Cuisinier::ajouterTable(Table t){
 // 	tables.push_back(t);
 // }

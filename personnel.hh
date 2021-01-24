@@ -11,6 +11,7 @@ class Personnel : public Personne{
 	public:
 		std::vector<Table> tables;		//Le numéro des tables attitrées
 		Personnel(std::string n, std::string p):Personne(n,p){}
+		~Personnel();
 		virtual std::string getNom()=0;
 		virtual std::string getPrenom()=0;
 		virtual int getRegime()=0;

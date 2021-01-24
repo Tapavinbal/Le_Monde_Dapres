@@ -4,15 +4,14 @@
 #include "personne.hh"
 #include "table.hh"
 #include "bar.hh"
-#include "commande.hh"
 
 class Bar;
 class Client : public Personne{
 	public:
 		Table* t;
 		static size_t i;
-		Commande* c;
 		Client();
+		~Client();
 		Client(std::string n, std::string p, size_t tailleGroupe, Bar b);
 		std::string getNom() {return nom;}
 		std::string getPrenom() {return prenom;}
@@ -27,6 +26,5 @@ class Client : public Personne{
 		float prix=0;
 		size_t id_client;
 		int nbrePersonnesGp;
-		//std::vector
 		Bar* bar;
 };

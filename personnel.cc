@@ -11,3 +11,5 @@ void Personnel::ajouterTable(Table t){
 void Personnel::augmenterNbTables(){
 	nbre_tables++;
 }
+
+Personnel::~Personnel(){}

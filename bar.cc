@@ -2,6 +2,8 @@
 #include "bar.hh"
 #include "stock.hh"
 
+Bar::~Bar(){}
+
 void Bar::afficherCuisiniers(){
 	for(size_t i=0;i<cuisiniers.size();i++){
 		std::cout<<cuisiniers[i].getPrenom()<<" "<<cuisiniers[i].getNom()<<" - ";
@@ -33,6 +35,16 @@ void Bar::afficherTables(){
 	std::cout<<std::endl;
 }
 
+void Bar::simulationTables(){
+	srand(time(NULL));
+	size_t limite = rand()%20;		//Pour un nombre aléatoire de fois qu'on peut fixer
+	size_t j;
+	for(size_t i = 0; i < limite; i++){	//on change l'état des tables
+		j = rand()%tables.size();
+		tables[j].setEtat(1 - tables[j].getEtat());
+	}
+}
+
 void Bar::afficherClients(){
 	for(size_t i=0;i<clients.size();i++){
 		std::cout<<"Client "<<clients[i].getId()<<" : "<<clients[i].getNom()<<" "<<clients[i].getPrenom()<<std::endl;
@@ -51,13 +63,13 @@ void Bar::associerServeurTable(Table* t){
 			i_serveur=i;
 		}
 		i++;
-}
-t->serveur=&(serveurs[i_serveur]);
-serveurs[i_serveur].tables.push_back(*t);
-serveurs[i_serveur].augmenterNbTables();
-//std::cout<<serveurs[i].getNbTables()<<std::endl;
-std::cout<<serveurs[i_serveur].getPrenom()<<" est le serveur de la table "<<t->getId()<<std::endl;
-std::cout<<std::endl;
+	}
+	t->serveur=&(serveurs[i_serveur]);
+	serveurs[i_serveur].tables.push_back(*t);
+	serveurs[i_serveur].augmenterNbTables();
+	//std::cout<<serveurs[i].getNbTables()<<std::endl;
+	std::cout<<serveurs[i_serveur].getPrenom()<<" est le serveur de la table "<<t->getId()<<std::endl;
+	std::cout<<std::endl;
 }
 
 void Bar::associerCuisinierTable(Table* t){
@@ -70,13 +82,13 @@ void Bar::associerCuisinierTable(Table* t){
 			i_cuisinier=i;
 		}
 		i++;
-}
-t->cuisinier=&(cuisiniers[i_cuisinier]);
-cuisiniers[i_cuisinier].tables.push_back(*t);
-cuisiniers[i_cuisinier].augmenterNbTables();
-//std::cout<<serveurs[i].getNbTables()<<std::endl;
-std::cout<<cuisiniers[i_cuisinier].getPrenom()<<" est le cuisinier de la table "<<t->getId()<<std::endl;
-std::cout<<std::endl;
+	}
+	t->cuisinier=&(cuisiniers[i_cuisinier]);
+	cuisiniers[i_cuisinier].tables.push_back(*t);
+	cuisiniers[i_cuisinier].augmenterNbTables();
+	//std::cout<<serveurs[i].getNbTables()<<std::endl;
+	std::cout<<cuisiniers[i_cuisinier].getPrenom()<<" est le cuisinier de la table "<<t->getId()<<std::endl;
+	std::cout<<std::endl;
 }
 
 int Bar::associerTableClient(Client *c){
@@ -84,29 +96,29 @@ int Bar::associerTableClient(Client *c){
 	unsigned long int i=0;
 	int temp=50;
 	//associer une table à ce groupe
-	 while( (i<(tables.size()))){
+	while( (i<(tables.size()))){
 	    if((tables[i].getEtat()==0)){
-				if(tables[i].getCapacite()>=c->getNbre()){
-					if(((tables[i].getCapacite())-(c->getNbre()))<temp){
+			if(tables[i].getCapacite()>=c->getNbre()){
+				if(((tables[i].getCapacite())-(c->getNbre()))<temp){
 	    			c->t=&(tables[i]);
 	     			table=1;
-						temp=(tables[i].getCapacite())-(c->getNbre());
+					temp=(tables[i].getCapacite())-(c->getNbre());
+				}
 			}
-		}
-		i++;
-	   }else{
-	     i++;
-	   }
-	 }
-	 if(table==0){
-	   std::cout<<"aucune table libre pour le moment"<<std::endl;
-		 std::cout<<std::endl;
-		 return 0;
-	 }else{
-		 c->t->setEtat(1);
-	   std::cout<<"Vous pouvez prendre la table : "<<(c->t->getId())<<std::endl;
-		 std::cout<<std::endl;
-		 return 1;
+			i++;
+	   	}else{
+	     	i++;
+	   	}
+	}
+	if(table==0){
+		std::cout<<"aucune table libre pour le moment"<<std::endl;
+		std::cout<<std::endl;
+		return 0;
+	}else{
+		c->t->setEtat(1);
+	    std::cout<<"Vous pouvez prendre la table : "<<(c->t->getId())<<std::endl;
+		std::cout<<std::endl;
+		return 1;
 	}
 }
 

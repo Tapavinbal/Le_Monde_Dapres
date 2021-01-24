@@ -13,6 +13,7 @@ class Table{
 		static std::size_t i;
 		Table();
 		Table(int c);
+		~Table();
 		void changerEtat();
 		void attribuerServeur(Serveur &s);
 		int getCapacite(){return capacite;}

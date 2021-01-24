@@ -16,3 +16,5 @@ Serveur::Serveur(string n, string p, int h):Personnel(n,p){
 // void Serveur::augmenterNbTables(){
 // 	nbre_tables++;
 // }
+
+Serveur::~Serveur(){}

@@ -1,11 +1,14 @@
 #pragma once
 #include <iostream>
+#include <cstdlib>
 #include <string>
 #include "table.hh"
 #include "serveur.hh"
 #include "cuisinier.hh"
 #include "client.hh"
 #include "stock.hh"
+#include <time.h>
+
 #include <map>
 
 class Client;
@@ -16,8 +19,10 @@ class Bar{
 		std::vector<Serveur>serveurs;
 		std::vector<Cuisinier>cuisiniers;
 		std::vector<Client>clients;
+		~Bar();
 		void afficherCuisiniers();
 		void afficherServeurs();
+		void simulationTables();
 		void afficherTables();
 		void afficherClients();
 		void associerServeurTable(Table *t);

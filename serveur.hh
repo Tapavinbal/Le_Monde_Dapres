@@ -12,6 +12,7 @@ class Serveur : public Personnel{
 		static std::size_t i;
 		Serveur();
 		Serveur(std::string n, std::string p, int h);
+		~Serveur();
 		std::string getNom() {return nom;}
 		std::string getPrenom() {return prenom;}
 		int getRegime(){return regime;}												//////////////Pourquoi la fonction est en double ? ////////////////

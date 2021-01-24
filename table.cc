@@ -10,18 +10,18 @@ Table::Table(int c){
   	capacite = c;
 }
 
+Table::~Table(){}
+
 void Table::changerEtat(){
   	if(etat==0){
-      etat=1;
+    	etat=1;
     }else{
-      etat=0;
+    	etat=0;
     }
 }
 
 void Table::setEtat(int e){
-  etat=e;
+  	etat=e;
 }
 
-void Table::attribuerServeur(Serveur &s){
-
-}
+void Table::attribuerServeur(Serveur &s){}

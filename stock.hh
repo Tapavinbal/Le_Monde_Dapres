@@ -6,6 +6,7 @@
 class Stock{
 	public:
 		Stock();
+		~Stock();
 		std::map<std::string,float>prix;
 		void setCarte(std::string s);
 		void setCarte(std::string s, int quantite);
