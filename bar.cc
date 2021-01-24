@@ -20,7 +20,7 @@ void Bar::afficherServeurs(){
 
 void Bar::afficherTables(){
 	for(size_t i=0;i<tables.size();i++){
-		std::cout<<"table n°"<<tables[i].getId()<<" - ";
+		std::cout<<"table n°"<<i+1<<" - ";
 		std::cout<<tables[i].getCapacite()<<" places"<<" - ";
 		if(tables[i].getEtat()==1){
 			std::cout<<"table occupée"<<std::endl;

@@ -136,6 +136,8 @@ int main(){
 	bar.clients.push_back(cl9);
 
 	//démarrage
+	std::system("clear");
+	std::system("toilet Bienvenue");
 	std::cout<<"BAR LE MONDE D'APRES"<<std::endl<<std::endl;
 	std::cout<<"Serveurs qui travaillent aujourd'hui :"<<std::endl;
 	bar.afficherServeurs();
