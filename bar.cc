@@ -69,7 +69,6 @@ void Bar::associerServeurTable(Table* t){
 	serveurs[i_serveur].augmenterNbTables();
 	//std::cout<<serveurs[i].getNbTables()<<std::endl;
 	std::cout<<serveurs[i_serveur].getPrenom()<<" est le serveur de la table "<<t->getId()<<std::endl;
-	std::cout<<std::endl;
 }
 
 void Bar::associerCuisinierTable(Table* t){
@@ -111,12 +110,12 @@ int Bar::associerTableClient(Client *c){
 	   	}
 	}
 	if(table==0){
-		std::cout<<"aucune table libre pour le moment"<<std::endl;
+		std::cout<<"Il n'y a pas de place pour le moment, veuillez revenir plus tard."<<std::endl;
 		std::cout<<std::endl;
 		return 0;
 	}else{
 		c->t->setEtat(1);
-	    std::cout<<"Vous pouvez prendre la table : "<<(c->t->getId())<<std::endl;
+	    std::cout<<"Vous pouvez prendre la table n° : "<<(c->t->getId())<<std::endl;
 		std::cout<<std::endl;
 		return 1;
 	}
