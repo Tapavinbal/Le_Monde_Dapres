@@ -12,10 +12,8 @@ class Cuisinier : public Personnel{
 		static std::size_t i;
 		Cuisinier(std::string n, std::string p, int h);
 		~Cuisinier();
-		std::string getNom() {return nom;}
-		std::string getPrenom() {return prenom;}
-		int getRegime() {return regime;}
 		std::size_t getId() const {return id_cuisinier;}
+		void sePresenter();
 		//void ajouterTable(Table t);
 		//int getNbTables(){return nbre_tables;}
 		//void augmenterNbTables();

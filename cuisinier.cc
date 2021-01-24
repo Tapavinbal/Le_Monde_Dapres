@@ -12,6 +12,10 @@ Cuisinier::Cuisinier(string n, string p, int h):Personnel(n,p){
 }
 
 Cuisinier::~Cuisinier(){}
+
+void Cuisinier::sePresenter(){
+	std::cout<<"Voici le cuisinier "<< getNom() << " " << getPrenom() <<  " (" << getRegime() << ")" << std::endl;
+}
 // void Cuisinier::ajouterTable(Table t){
 // 	tables.push_back(t);
 // }

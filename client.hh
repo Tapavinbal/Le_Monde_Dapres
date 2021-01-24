@@ -13,8 +13,6 @@ class Client : public Personne{
 		Client();
 		~Client();
 		Client(std::string n, std::string p, size_t tailleGroupe, Bar b);
-		std::string getNom() {return nom;}
-		std::string getPrenom() {return prenom;}
 		std::size_t getId() {return id_client;}
 		int getNbre(){return nbrePersonnesGp;}
 		void setNomEtPrenomEtNbre(std::string n,std::string p,int nbre,Bar b);
@@ -22,6 +20,7 @@ class Client : public Personne{
 		std::map<std::string,int>::iterator i_boisson;
 		void setPrix(float p);
 		float getPrix(){return prix;}
+		void sePresenter();
 	private:
 		float prix=0;
 		size_t id_client;

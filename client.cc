@@ -26,3 +26,7 @@ void Client::setNomEtPrenomEtNbre(std::string n,std::string p,int nbre, Bar b){
 void Client::setPrix(float p){
     prix=p;
 }
+
+void Client::sePresenter(){
+	std::cout<<"Voici le client "<< getNom() << " " << getPrenom() << std::endl;
+}
