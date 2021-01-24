@@ -25,5 +25,4 @@ class Client : public Personne{
 		float prix=0;
 		size_t id_client;
 		int nbrePersonnesGp;
-		Bar* bar;
 };

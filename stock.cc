@@ -37,7 +37,7 @@ void Stock::afficherCarte(){
 
 
 int Stock::passerCommande(std::string commande, int nombre){
-    if (carte.find(commande) != carte.end() ){
+    if (carte.find(commande) != carte.end() && nombre!=0){
         if(carte.find(commande)->second>=nombre){
             carte[commande]-=nombre;
             return 1; //si la commande a fonctionné
@@ -47,8 +47,13 @@ int Stock::passerCommande(std::string commande, int nombre){
         }
     }else{
         if(commande!="Q"){
+          if(nombre==0){
+            std::cout<<"Veuillez choisir une quantité supérieure à 0"<<std::endl<<std::endl;
+            return 0;
+          }else{
             std::cout<<"Ce produit n'est pas diponible"<<std::endl<<std::endl;
             return 0;
+          }
         }else{
           return 2; //si on a demandé de quitter les commandes
       }
