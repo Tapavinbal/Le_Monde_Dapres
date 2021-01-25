@@ -12,5 +12,4 @@ class Cuisinier : public Personnel{
 		~Cuisinier();
 		void sePresenter();
 	private:
-		std::size_t id_cuisinier;
 };
