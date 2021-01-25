@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <time.h>
 #include "personnel.hh"
 
 class Table;

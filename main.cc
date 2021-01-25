@@ -179,7 +179,7 @@ int main(){
 		}while(carte!="OK");
 		std::system("clear");
 
-		//passser toutes les commandes de ce groupe
+		//passer toutes les commandes de ce groupe
 		while(a!="Q"){
 			stock.afficherCarte();
 			bar.afficherCommandeClient(&stock,&(bar.clients[i]));

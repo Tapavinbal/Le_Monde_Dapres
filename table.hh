@@ -21,6 +21,7 @@ class Table{
 		Serveur getServeur();
 		bool getEtat(){return etat;}
 		void setEtat(int e);
+		friend std::ostream& operator<<(std::ostream&, const Table &);
 	private:
 		std::size_t id_table;
 		bool etat; //0 pour libre et 1 pour occupée

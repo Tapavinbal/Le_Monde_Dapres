@@ -23,3 +23,13 @@ void Table::changerEtat(){
 void Table::setEtat(int e){
   	etat=e;
 }
+
+std::ostream& operator<<(std::ostream& out, const Table& t){
+	out<<"table n°"<< t.id_table << " - " << t.capacite << " places" << " - ";
+	if(t.etat==1){
+		out<<"table occupée";
+	}else{
+		out<<"table libre";
+	}
+	return out;
+}
